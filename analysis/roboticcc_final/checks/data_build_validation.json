@@ -1,0 +1,11 @@
+{
+  "agx_causal_rows": 3000,
+  "agx_zero_compute_rows": 3000,
+  "rp2040_successful_rows": 82,
+  "completion_record_rows": 6096,
+  "agx_policy_pair_rows": 2400,
+  "agx_effect_rows": 528,
+  "figure2_rows": 48,
+  "figure3_rows": 8,
+  "all_checks_pass": true
+}

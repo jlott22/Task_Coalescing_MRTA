@@ -1,0 +1,278 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+
+\hypersetup{
+  pdftitle={Embedded Evaluation of Task Admission Coalescing in Decentralized Multi-Robot Systems},
+  pdfauthor={James Lott and Vahraz Honary},
+  pdfkeywords={multi-robot task allocation, task admission, event batching, embedded systems, computational workload}
+}
+
+\newcommand{\platformtodo}[1]{\textit{[AUTHOR INPUT REQUIRED. #1]}}
+
+\title{Embedded Evaluation of Task Admission Coalescing in Decentralized Multi-Robot Systems}
+
+\author{%
+\IEEEauthorblockN{James Lott and Vahraz Honary}
+\IEEEauthorblockA{Department of Electrical Engineering\\
+University of San Diego\\
+San Diego, California, USA\\
+\{jlott,vhonary\}@sandiego.edu}}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Dynamic multi-robot missions must decide whether newly released tasks should enter allocation immediately or wait to be processed together. We evaluate task admission coalescing as an external control for CBAA, ACBBA, PI, and HIPC in four-robot dynamic Collaborative Visit missions while retaining valid allocator state. The study comprises 3,000 AGX Orin missions with measured computation delay, 3,000 paired zero-compute missions, and 96 planned RP2040 allocator hardware-in-the-loop missions, with 82 successful hardware completions. Eager admission is compared with thresholds of two, four, and eight tasks and a four-task policy with a 10-s waiting deadline across three arrival rates. Fewer admissions do not consistently reduce allocator work. Under high arrivals, bounded admission reduces mean HIPC work by 19.35\% with a 1.40-s increase in mean task-completion latency, while four-task Count admission increases CBAA work by 22.82\% despite reducing admission epochs from 43 to 12. In four matched medium-arrival HIPC scenarios, Count admission reduces mean RP2040 work by 59.85\%, task latency by 39.47\%, and mission duration by 15.46\%, with all three improving in three scenarios. The corresponding AGX task latency increases by 27.69\%. The results identify allocator-, load-, and platform-dependent operating regions in which admission coalescing either increases work, exchanges responsiveness for computational savings, or improves eventual task completion.
+\end{abstract}
+
+\begin{IEEEkeywords}
+multi-robot task allocation, task admission, event batching, embedded systems, computational workload, task responsiveness
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:introduction}
+Decentralized multi-robot task allocation (MRTA) distributes assignment decisions among robots using local state and exchanged peer information~\cite{choi2009consensus,johnson2010asynchronous}. When tasks arrive during execution, the team must incorporate new requests while continuing earlier assignments. Dynamic robotic service therefore combines allocation and routing with the time requests spend waiting for service~\cite{pavone2011adaptive}. Beyond deciding which robot should visit a task, an execution system must decide when that task becomes available to its allocators. Immediate admission minimizes this initial waiting, whereas task admission coalescing collects successive requests into fewer admission events.
+
+Fewer admissions need not produce a corresponding reduction in computation. Allocators continue processing consensus information, repairing routes, and selecting tasks between admission events, while larger batches can change the cost of those transactions. Total work depends on invocation frequency and per-call cost over the resulting mission. For embedded execution, the central question is whether a computational saving improves task service despite the wait introduced before allocation. Measuring work without allowing it to affect the mission clock cannot resolve that question.
+
+Prior dynamic allocation methods reduce update costs at several points in the coordination process. Johnson et al. extend asynchronous bundle allocation with replanning in response to changes in local situational awareness~\cite{johnson2011dynamic}. Buckman et al. use partial replanning to reopen a selected part of an existing CBBA allocation and can restrict the participating team, trading coordination against convergence time~\cite{buckman2019partial}. Solver reuse provides another approach. Tuck et al. retain learned information between allocations of newly arriving tasks through incremental satisfiability-modulo-theories solving~\cite{tuck2024smt}.
+
+Event-triggered coordination instead changes when agents exchange or negotiate allocation information. Sao et al. suppress CBBA broadcasts when bid and winner information has not changed~\cite{sao2025event}. Aznar et al. initiate task negotiation in response to significant events and adapt coordination pace to environmental conflict~\cite{aznar2026event}. Temporal task admission provides a complementary control by acting before the coordination process receives a new request. Its waiting policy can therefore be evaluated separately from the allocator's internal communication and repair rules.
+
+Waiting before dispatch also has established precedents outside decentralized task allocation. Pavone et al. analyze robotic routing policies for stochastic service requests under different arrival loads~\cite{pavone2011adaptive}. In online warehouse order batching, Gil-Borr\'{a}s et al. show that the choice of a waiting window materially affects operational performance across batching and routing methods~\cite{gilborras2024window}. Their study establishes the importance of dispatch timing, while the present question concerns the processor work generated by decentralized allocators after task admission. Waiting for a batch, reducing internal communication, and reducing cumulative allocator work are related but distinct effects.
+
+Collaborative Visit (CV) benchmarks provide a common basis for comparing allocation mechanisms. Cao et al. evaluate distributed allocators under non-ideal communication in pre-allocation and execution-based CV~\cite{cao2025cv}. Our preceding CV benchmark jointly characterizes route quality, communication, allocation reliability, and computation for a fixed set of known targets~\cite{lott2026benchmark}. Its execution-integrated timing measures accumulated work without advancing simulated time. The companion bundle-length study varies the depth of retained routes and examines objective and communication dependence~\cite{lott2026bundle}. Neither study evaluates the waiting introduced by online task admission or the resulting feedback between measured computation and mission execution.
+
+This work evaluates task admission coalescing through a common external policy applied to four existing decentralized allocators. Robots retain valid goals and allocation state as batches arrive, and their autonomous coordination continues between admissions. Immediate admission is compared with count-based collection and bounded waiting in dynamic CV missions with eight initial tasks and 42 online releases. Paired NVIDIA Jetson AGX Orin (AGX) experiments measure the policy response with and without computation delay, while RP2040 allocator hardware-in-the-loop (HIL) execution measures the embedded response on matched scenarios. The study makes three contributions.
+\begin{enumerate}
+\item A paired evaluation of five task admission policies across CBAA, ACBBA, PI, and HIPC under three arrival loads, with matched causal and zero-compute execution.
+\item A joint computation--responsiveness analysis that distinguishes admission frequency, allocator calls, per-call work, and task waiting, supported by checks of timing feedback, recovery activity, and terminal handling.
+\item A measured AGX--RP2040 comparison showing platform-dependent policy effects, including a reversal in the task-service response of HIPC on four matched scenarios.
+\end{enumerate}
+
+Section~\ref{sec:system} defines dynamic CV, admission policies, and causal execution. Section~\ref{sec:methodology} describes the experimental design and analysis. Section~\ref{sec:results} presents the results and their deployment implications, and Section~\ref{sec:conclusion} concludes the paper.
+
+\section{System Design and Admission Policies}
+\label{sec:system}
+
+\subsection{Dynamic Collaborative Visit}
+\label{sec:dynamic_cv}
+The study extends the fixed-task Collaborative Visit framework in~\cite{lott2026benchmark} to tasks released during execution. Four robots operate on an obstacle-free $19\times19$ grid and must visit 50 distinct task cells. Eight tasks are released initially and 42 arrive online. For task $j$, let $r_j$, $a_j$, and $f_j$ denote its release, environmental admission, and first completion times. Release makes a task available to the admission policy. Admission announces its location to the robots, after which a robot with that local knowledge can complete it by reaching the cell or servicing it at a stationary control boundary. Service adds no positive duration. Crossing a task cell before learning its admission does not complete the task.
+
+Each robot maintains its own task knowledge, allocation state, and received peer information. The environment records releases and physical completions but does not select robot assignments. A common robot shell provides four-neighbor A* routing, movement, collision-intent handling, and communication. The mission ends when every task has been completed. This separates the externally controlled timing of task availability from decentralized decisions about task ownership and visit order.
+
+\subsection{Admission Policies}
+\label{sec:admission}
+Newly released tasks enter a pending queue ordered by release time and task index. All policies admit the initial eight tasks together at time zero. Eager admits each subsequent task immediately on release. Count admits exactly $b$ pending tasks whenever the queue reaches $b\in\{2,4,8\}$, leaving any smaller remainder pending. Bounded uses $b=4$ and additionally admits the pending remainder when its oldest task has waited $W=10$~s. The deadline limits residence in the environmental queue, rather than subsequent communication, allocation, or service time.
+
+Count requires a terminal rule because 42 online tasks leave a two-task remainder for $b=4$ and $b=8$. This remainder is admitted only after no future release remains and all previously admitted tasks have physically completed. The same rule applies to Bounded when it precedes the timeout. There is no automatic flush at the last release, and ordinary completion, idleness, or consensus events do not otherwise admit pending tasks. An admission epoch records one admitted batch, including the initial batch.
+
+On receipt of an admission announcement, a robot records the new tasks and requests allocation at its next safe control boundary. Its current traversal, valid goal, ownership, and remaining route are preserved. The threshold $b$ controls new-task admission rather than the retained bundle depth $B$ studied in~\cite{lott2026bundle}.
+
+\subsection{Decentralized Allocator Behavior}
+\label{sec:allocators}
+The four evaluated implementations use Manhattan-distance allocation costs. The Consensus-Based Auction Algorithm (CBAA)~\cite{choi2009consensus} maintains one owned task and retains its auction-time winning bid during movement. The Asynchronous Consensus-Based Bundle Algorithm (ACBBA)~\cite{johnson2010asynchronous} constructs bundles through marginal route-insertion bids and timestamped consensus, releasing a lost task and its dependent suffix. Performance Impact (PI)~\cite{zhao2016impact} uses marginal route significance, removes completed or lost items, and reevaluates the remaining path. Hybrid Information and Plan Consensus (HIPC)~\cite{johnson2016hipc} constructs a local team plan from received peer information and reconciles its own path through plan consensus.
+
+The three multi-task implementations have no planning-depth cap and can consider the full eligible, locally known task set. Admission preserves valid state, while completion and conflict repair follow each implementation's own rules. Allocator calls also arise from delivered consensus information, completion, invalidation, and local recovery. A robot without actionable information sleeps rather than polling the allocator periodically. Recovery becomes eligible after 120~s continuously without an executable goal and since the latest local progress or recovery attempt, provided locally known unfinished tasks remain. Thus admission epochs and allocator invocations are distinct events.
+
+\subsection{Causal Execution}
+\label{sec:causal}
+Each logical robot has an independent virtual processor on the common mission clock. Inputs to simultaneous allocator calls are frozen before execution. A measured transaction duration $d$ delays the calling robot from virtual start $s$ until $s+d$, when its result becomes available. The robot finishes an existing traversal before allocating and does not move while its allocator is busy. Peer activity, releases, and message deliveries continue on the event clock. Information received during computation is buffered for a subsequent transaction. Figure~\ref{fig:architecture} shows the admission and execution boundaries.
+
+The zero-compute arm executes the same host allocator but inserts zero virtual computation time. Its decisions are recomputed from its own evolving state rather than replayed from the causal arm. The comparison therefore captures changes in execution and coordination caused by enabling computation delay, not just a scalar time added to an otherwise fixed trajectory.
+
+\begin{figure}[t]
+\centering
+% MATLAB Figure 1 output should replace this file with the same name.
+\includegraphics[width=\columnwidth]{figures/fig1_admission_architecture.pdf}
+\caption{Task admission and causal execution. Each logical robot maintains local state and a separate virtual processor. In allocator-HIL, one physical board measures transactions for all four logical robots in one simulated mission. Transport and checkpoint restoration are outside the allocation timer.}
+\label{fig:architecture}
+\end{figure}
+
+\section{Experimental Methodology}
+\label{sec:methodology}
+
+\subsection{Workloads and Campaign Design}
+\label{sec:workloads}
+Fifty scenario blocks are generated from master seed 2026081406 using separate deterministic spatial, arrival, and runtime streams. Robots start at $(0,0)$, $(0,6)$, $(0,12)$, and $(0,18)$, facing east. Task cells are sampled uniformly without replacement from the 357 non-start cells. For each scenario, 42 independent unit-exponential increments $e_k$ generate online release times
+\begin{equation}
+ r_{8+k}=\frac{1}{\lambda}\sum_{\ell=1}^{k}e_\ell,
+ \qquad k=1,\ldots,42,
+ \label{eq:release}
+\end{equation}
+rounded to nine decimal places. Low, medium, and high arrival loads use $\lambda=0.075$, $0.30$, and $0.60$ tasks/s. The spatial layout and underlying increments are shared across loads, and each scenario is reused across policies, allocators, and timing arms.
+
+Cardinal traversal takes $1.60\pm0.10$~s with uniform jitter, and quarter turns take 0.30~s. Collision-intent settling and replanning take 0.10 and 0.30~s. All messages are delivered without loss. Peer-message delay is $40\pm10$~ms in the AGX campaigns and fixed at 40~ms in allocator-HIL. Task-admission announcements take 40~ms in both. These are simulated communication delays, separate from hardware transport.
+
+The AGX design crosses four allocators, three loads, five policies, and 50 scenarios, producing 3,000 missions per timing arm in two 25-scenario rounds. The hardware subset uses the first four scenario blocks with Eager and Count $b=4$, producing 96 planned missions. Table~\ref{tab:campaigns} reports the retained coverage. Runs terminate on completion or at finite limits of 251,000 processed events and 5,500 events without a change in the recorded progress signature. The 60 causal terminations comprise 59 ACBBA stagnation-limit outcomes and one HIPC total-event-limit outcome. These remain recorded outcomes rather than evidence of permanent allocator deadlock.
+
+\begin{table}[t]
+\caption{Experimental campaigns and retained coverage.}
+\label{tab:campaigns}
+\centering
+\small
+\setlength{\tabcolsep}{3.3pt}
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Campaign & Policies & Traces & Planned & Complete & Other\\
+\midrule
+AGX causal & 5 & 50 & 3,000 & 2,940 & 60\\
+AGX zero-compute & 5 & 50 & 3,000 & 3,000 & 0\\
+RP2040 HIL & 2 & 4 & 96 & 82 & 14\\
+\bottomrule
+\end{tabular}\par
+\vspace{3pt}
+\noindent\parbox{\columnwidth}{\footnotesize All campaigns include four allocators and three arrival loads. Other outcomes are finite-rule noncompletions for AGX and terminal technical failures for RP2040. Traces are shared scenario blocks, not independent across conditions.}
+\end{table}
+
+\subsection{Platforms and Allocator Measurement}
+\label{sec:platforms}
+AGX measurements use CPython 3.10.12 on Linux/aarch64 with five concurrent simulation workers. \platformtodo{AGX variant and RAM, JetPack/L4T version, and historical CPU clock/power settings.} Four Pololu 3pi+ 2040 boards execute native MicroPython allocator transactions. Each board handles one simulated four-robot mission at a time by restoring the relevant robot checkpoint before each call. The host retains world state, routing, motion, and message scheduling. No physical robot movement is evaluated. \platformtodo{Pololu variant, RP2040 clock, firmware/runtime build, and historical power/USB arrangement.}
+
+Each accepted device transaction must match the host reference in selected goal, candidate count, outbound messages, and allocator post-state. The campaign includes two runtime builds separated by a heap-management repair. Complete Eager--Count pairs use the same board and runtime build within each scenario. Failed attempts remain distinct from successful timing records.
+
+The timed boundary includes ordered admission, decoded consensus, and completion callbacks, requested local recovery, and goal selection or route repair. AGX uses a monotonic nanosecond timer and RP2040 uses wrap-safe microsecond timing. Naturally triggered garbage collection inside the transaction is included. Transport, decoding, checkpoint restoration, explicit pre-call collection, output serialization, logging, routing, and motion are excluded. Physical calls can execute serially for measurement while their durations are assigned to independent virtual robot processors.
+
+\subsection{Outcomes and Paired Analysis}
+\label{sec:analysis}
+For scenario $t$, let $n_{i,t}$ be robot $i$'s number of valid allocator transactions and $d_{i,t,k}$ the measured duration of transaction $k$. Total allocator processor work and invocation count are
+\begin{equation}
+ C_{\Sigma,t}=\sum_i\sum_{k=1}^{n_{i,t}}d_{i,t,k},
+ \qquad N_{\mathrm{call},t}=\sum_i n_{i,t}.
+ \label{eq:work}
+\end{equation}
+Mean work per call is $\bar c_t=C_{\Sigma,t}/N_{\mathrm{call},t}$, calculated within each mission before averaging. Work counts full dispatched transactions, including those whose virtual completion extends beyond the final task completion. It is accumulated allocator work rather than mission delay or total onboard computation.
+
+The common responsiveness outcome is
+\begin{equation}
+ \bar L_t=\frac{1}{50}\sum_{j=1}^{50}(f_{j,t}-r_{j,t}).
+ \label{eq:latency}
+\end{equation}
+The separately labeled $\bar L_{\mathrm{online},t}$ averages only the 42 online tasks. Their release-to-admission waiting $a_j-r_j$ and post-admission time $f_j-a_j$ decompose service latency. Secondary outcomes are mission duration $T_{\mathrm{mission},t}=\max_j f_{j,t}$, the nearest-rank latency p95, total and maximum robot steps, and admission count $E_{\mathrm{adm},t}$. The all-task p95 is the 48th ordered latency of a completed mission.
+
+Continuous policy comparisons retain scenarios completed under both the policy and Eager within the same allocator, load, and platform. Planned and completed counts remain visible separately. With $\bar Y_p$ and $\bar Y_E$ denoting means over this common cohort, we report absolute paired differences and percentage changes
+\begin{equation}
+ Q_p(Y)=100\left(\frac{\bar Y_p}{\bar Y_E}-1\right).
+ \label{eq:relative}
+\end{equation}
+AGX uncertainty uses 10,000 shared scenario-bootstrap resamples~\cite{efron1979bootstrap} with seed 20260912 and percentile 95\% pointwise intervals. These describe individual contrasts rather than simultaneous coverage across the matrix. Each draw retains the paired outcomes and completion masks across conditions. Tasks, calls, and repeated appearances of a scenario are not separate replicates. Hardware summaries show individual pairs and descriptive changes on matched scenario subsets. The detailed HIPC and CBAA examples were selected from the observed matrix to explain contrasting responses rather than to provide held-out validation.
+
+For the selected mechanism comparisons, the exact within-scenario identity
+\begin{equation}
+ \Delta C_\Sigma=
+ \Delta N\frac{\bar c_p+\bar c_E}{2}
+ +\Delta\bar c\frac{N_p+N_E}{2}
+ \label{eq:decomposition}
+\end{equation}
+separates call-count and per-call-work contributions before averaging, with $N=N_{\mathrm{call}}$ and $\Delta$ denoting policy minus Eager. This is an accounting decomposition. Supporting checks use zero-compute call counts, recovery-call records, eight paired local recovery-disabled replays, and latency over the first 40 online tasks to examine terminal-remainder effects. Diagnostic replay timing is not treated as new AGX or RP2040 measurement.
+
+\section{Results and Discussion}
+\label{sec:results}
+
+\begin{figure*}[t]
+\centering
+% MATLAB Figure 2 output should replace this file with the same name.
+\includegraphics[width=\textwidth]{figures/fig2_coalescing_regimes.pdf}
+\caption{AGX computation and responsiveness relative to Eager. Columns show arrival loads and rows show allocators. Points are percentage changes between paired-cohort means, with 95\% pointwise scenario-bootstrap intervals on each axis. Negative values indicate lower work or latency. The cross at the origin denotes Eager. All comparisons retain 50 pairs except those annotated. For ACBBA under high arrivals, the four sample sizes follow the legend order. The latency scale differs between columns.}
+\label{fig:regimes}
+\end{figure*}
+
+\subsection{Computation and Responsiveness Across Arrival Loads}
+\label{sec:regimes}
+Figure~\ref{fig:regimes} shows that temporal admission coalescing exchanges task responsiveness for computational savings in some conditions, but raises both costs in others. Of the 48 policy comparisons, 42 retain all 50 paired scenarios. The remaining six condition their continuous outcomes on common completion and are identified in the figure. Thirty comparisons have lower mean call count and allocator work but higher mean task latency. Eleven instead have more calls and greater work despite fewer admission epochs. These counts summarize directions of observed mean effects, not the number of statistically supported or independent findings.
+
+Sparse arrivals produce the clearest waiting penalty. At 0.075 tasks/s, Count $b=4$ increases online-task mean completion latency by 20.08--23.57~s across the four allocators, with an increase on every one of the 50 scenarios for each method. Waiting for environmental admission accounts for 83.3--96.7\% of these mean differences. For an ordinary full batch, task position $q\in\{1,\ldots,b\}$ has expected waiting $(b-q)/\lambda$. Averaging over its positions gives $(b-1)/(2\lambda)$, or 20~s in this condition. The observed mean over the first 40 online tasks is 19.51~s. The large service penalty therefore follows predominantly from collecting sparse arrivals, with smaller positive post-admission penalties remaining for all four methods. Computation need not follow the same direction. CBAA work falls by 29.39\% under low arrivals but rises by 22.82\% under high arrivals for the same Count threshold.
+
+A deadline reduces the sparse-arrival penalty. For low-load HIPC, online-task mean latency is 14.18~s with Eager, 34.26~s with Count $b=4$, and 21.36~s with Bounded admission. The corresponding mean admission wait falls from 19.41 to 7.58~s when the deadline is included. The deadline substantially reduces the delay from collecting a full batch, although mean latency remains above Eager. The importance of choosing a waiting window is consistent with online warehouse batching studies~\cite{gilborras2024window}, while the present comparison additionally measures the allocation work generated after admission.
+
+Bounded admission lowers mean work in ten of the twelve allocator--load conditions, while mean task latency increases in all twelve. The work-reducing ACBBA/high comparison has 30 common completers, whereas the other nine have 50. PI under medium arrivals is a clear adverse case, with work increasing by 11.37\% and latency by 22.35\%. Larger Count batches can also amplify the responsiveness cost without delivering a proportionate work reduction. For high-load HIPC, Count $b=8$ reduces work by 25.32\% but increases mean task latency by 20.93\%, compared with a 19.35\% work reduction and 4.34\% latency increase under Bounded admission. The useful operating point consequently depends on both the allocator response and the relative importance of processor work and task service.
+
+\subsection{From Admissions to Allocator Work}
+\label{sec:mechanism_results}
+Table~\ref{tab:mechanism} contrasts two complete high-arrival comparisons. Both reduce admission epochs by approximately 72\%, yet their computational responses differ. HIPC with Bounded admission reduces allocator work from 1.678 to 1.353 processor-seconds per mission, a 19.35\% reduction with a 95\% interval of 9.40--27.66\%. Work decreases on 38 of 50 traces. The main contribution comes from fewer invocations. Call count falls by 17.27\%, and the within-scenario decomposition in~\eqref{eq:decomposition} attributes 84.5\% of the mean work saving to its call-count term. Mean work per call decreases by 4.03\%, but the interval for that change spans zero. The work-saving direction is present in both 25-scenario execution rounds, with reductions of 18.72\% and 19.96\%.
+
+\begin{table}[t]
+\caption{High-arrival admission and computation contrasts.}
+\label{tab:mechanism}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.4pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Quantity & \shortstack{HIPC\\Bounded $b=4$} & \shortstack{CBAA\\Count $b=4$}\\
+\midrule
+$E_{\mathrm{adm}}$ & $43.00\to12.12$ & $43.00\to12.00$\\
+$N_{\mathrm{call}}$ & $1009.90\to835.50$ & $461.08\to495.36$\\
+$\bar c$ (ms) & $1.631\to1.565$ & $0.304\to0.348$\\
+$C_\Sigma$ (processor-s) & $1.678\to1.353$ & $0.1405\to0.1726$\\
+$\bar L$ (s) & $32.37\to33.77$ & $27.02\to31.22$\\
+Mean within-mission p95 (s) & $88.88\to89.18$ & $65.90\to73.13$\\
+$T_{\mathrm{mission}}$ (s) & $140.42\to138.88$ & $117.78\to142.18$\\
+\midrule
+Call-count term (ms) & $-274.29$ & $+11.46$\\
+Per-call-work term (ms) & $-50.32$ & $+20.61$\\
+\bottomrule
+\end{tabular}\par
+\vspace{3pt}
+\noindent\parbox{\columnwidth}{\footnotesize Entries are means over 50 complete scenario pairs, shown as Eager $\to$ policy. Bounded uses $W=10$~s. Per-call work is averaged within missions, so its displayed mean need not equal mean work divided by mean calls. The last rows are additive terms from~\eqref{eq:decomposition}, not separate causal effects.}
+\end{table}
+
+HIPC's observed mean task-latency increase is 1.40~s, with a 95\% interval from $-0.21$ to $+3.15$~s. The online-only increase is 1.57~s. Mean within-mission p95 latency changes by 0.31~s, and mission duration falls by 1.55~s, with both intervals spanning zero. HIPC therefore saves allocator work with a modest observed mean responsiveness cost, rather than a demonstrated mission-speed improvement.
+
+CBAA exhibits the opposite work response. Count $b=4$ increases calls by 7.43\% and mean work per call by 14.20\%, producing a 22.82\% increase in total work with a 95\% interval of 15.13--30.91\%. Work rises on 42 of 50 traces. Both terms of the decomposition are positive, with call count accounting for 35.7\% and per-call cost for 64.3\% of the mean increase. Admission count therefore understates the computational activity that continues through allocation, communication processing, and execution.
+
+The CBAA work increase is only 0.0321 processor-seconds, whereas mean mission duration increases by 24.39~s and task latency by 4.21~s. Team travel also rises by 11.24\%. Mean work per simulated mission second changes by approximately 1.50\%, indicating that longer execution contributes to the greater cumulative burden even though processing intensity changes little. The mission penalty is not simply the additional computation inserted into an otherwise unchanged trajectory. Admission changes when tasks become available and the allocation and movement that follow. Alongside the full matrix, these examples show why admission count, invocation count, and accumulated processor work must be distinguished.
+
+\subsection{Embedded Execution}
+\label{sec:hardware_results}
+The hardware campaign retains 38 complete Eager--Count pairs from 48 planned blocks. Figure~\ref{fig:hardware} shows the four medium-load HIPC scenarios that complete under both policies on both platforms. Hardware pairs use the same board and runtime build within each scenario, and the AGX comparison uses those same scenario identities.
+
+\begin{figure}[t]
+\centering
+% MATLAB Figure 3 output should replace this file with the same name.
+\includegraphics[width=\columnwidth]{figures/fig3_hipc_medium_hardware.pdf}
+\caption{Matched medium-arrival HIPC missions under Eager and Count $b=4$. Lines connect the same scenario under both policies, and legend entries identify the four shared traces. The upper panels report summed allocator work using platform-specific scales. The lower panels report all-task mean latency on a common scale. These are individual measured policy pairs, not uncertainty intervals.}
+\label{fig:hardware}
+\end{figure}
+
+On RP2040, Count $b=4$ reduces mean allocator work from 353.31 to 141.85 processor-seconds, a 59.85\% reduction. Call count falls by 9.93\%, while the mean of mission-level work per call falls by 55.59\%, from 437.10 to 194.12~ms. The saving is therefore not explained by fewer calls alone. Coalescing also changes the cost of the transactions generated during execution. Mean task-completion latency falls from 62.39 to 37.76~s, a 39.47\% reduction, and mean mission duration falls from 238.47 to 201.60~s, a 15.46\% reduction. Three of the four scenarios improve all three outcomes. The fourth, trace 0001, has higher work, task latency, and mission duration under Count, and remains visible in the paired figure.
+
+The same four AGX scenarios show a different operational response. Mean work decreases from 1.101 to 1.015 processor-seconds, or 7.79\%, but mean task latency increases by 27.69\% and mission duration by 14.22\%. Task latency increases on all four AGX traces. Thus waiting to collect tasks improves their eventual service time in the tested RP2040 condition, while slowing service on AGX for the corresponding scenarios. The substantially larger absolute work saving on RP2040 accompanies a reversal in the policy's service effect. This cross-platform comparison uses the execution setups described in Sections~\ref{sec:workloads} and~\ref{sec:platforms}, which differ in runtime and message timing as well as processor capability.
+
+The hardware response also varies with load. Under high arrivals, HIPC retains all four pairs but mean work increases by 7.39\% and mission duration by 4.61\%, with increases in both on three traces. High-load PI provides a separate favorable example on three complete pairs, with mean work reduced by 18.67\% and task latency by 12.34\%. All three pairs save work, while two improve latency and mission duration. The fourth planned Count trial has a retained technical failure. These conditions show that the embedded benefit is neither automatic at high arrival rates nor shared uniformly across allocators. Policy selection must consider the workload generated by the particular allocator, not hardware capability alone.
+
+\subsection{Generality and Deployment Implications}
+\label{sec:generality_results}
+The principal call-count directions do not require injected computation delay. In the zero-compute arm, high-load HIPC Bounded reduces calls from 992.74 to 859.78, while high-load CBAA Count $b=4$ increases calls from 456.40 to 486.46. Both comparisons contain 50 complete pairs. The corresponding causal comparisons record no recovery attempts, excluding active recovery as the source of their work response. The eight recovery-disabled local replay pairs likewise match their already recovery-free baselines. Together, these checks rule out recovery overhead in the selected contrasts and preserve the call-count directions under the same controller without injected delay.
+
+Terminal handling affects the last tasks but does not create the main latency penalty. Restricting both policies to the first 40 online tasks leaves high-load CBAA mean latency increasing from 27.23 to 30.43~s. The sparse-arrival penalties also remain on that common task subset. The final two tasks amplify some delays but do not explain the overall response. This check excludes their task outcomes from the comparison without changing the execution or removing work from the recorded missions.
+
+The deployment implication is to evaluate admission policy jointly through processor work and task-service delay. A reduction in trigger frequency is not sufficient evidence of an efficient implementation, and the lowest-work policy need not provide the most responsive service. Bounded admission offers a useful way to limit environmental waiting, while the embedded HIPC result demonstrates that delayed admission can improve eventual completion when the resulting execution workload is more favorable. Neither observation selects a common threshold for all allocators or arrival rates.
+
+The quantitative operating points are established for four robots, exponential task arrivals, lossless communication, and the evaluated allocator implementations. Changes to autonomous trigger rules, retained state, or movement behavior can alter their response. Six AGX contrasts omit noncompleted pairs from their continuous outcomes, while the principal HIPC and CBAA comparisons retain all 50 scenarios. The hardware study evaluates allocator execution in simulated missions, not physical robot motion.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Task admission coalescing changes the computational workload and responsiveness of decentralized allocation, but admission frequency alone does not predict either outcome. Under high arrivals, Bounded admission reduces mean HIPC processor work by 19.35\% with an observed 1.40-s increase in mean task latency. CBAA under Count $b=4$ instead accumulates 22.82\% more work despite reducing admission epochs from 43 to 12. The corresponding call-count directions persist without injected compute delay and are not driven by recovery activity in these comparisons. Under sparse arrivals, waiting to collect tasks dominates the service penalty, and adding a deadline substantially reduces that waiting.
+
+The embedded experiment demonstrates that delayed admission can also improve eventual task completion. Across four medium-arrival HIPC scenarios on RP2040, Count $b=4$ reduces mean allocator work by 59.85\%, mean task latency by 39.47\%, and mission duration by 15.46\%. Three scenarios improve on all three outcomes. The same scenarios have higher mean task latency on AGX, while the high-arrival RP2040 condition does not preserve the benefit. Useful admission settings therefore depend on the allocator, arrival load, and execution platform. Their evaluation should combine accumulated processor work with task-service delay, rather than selecting thresholds from admission counts alone. These results motivate adaptive admission policies that use observed workload and waiting to respond to changing arrival conditions.
+
+\section*{Data and Code Availability}
+\platformtodo{Confirm the public archive URL and release version for the simulator, paired scenarios, analysis tables, and figure-generation code.}
+
+\section*{Acknowledgment}
+ChatGPT (OpenAI) assisted with drafting and revising the Abstract and Sections I--V and with code used to check the analyses and prepare Figures~1--3 and Tables~I--II. The reported measurements are taken from the recorded experiment outputs.
+
+\bibliographystyle{IEEEtran}
+\bibliography{reference}
+
+\end{document}

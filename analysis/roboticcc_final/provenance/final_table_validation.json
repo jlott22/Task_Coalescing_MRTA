@@ -1,0 +1,41 @@
+{
+  "all_policy_comparisons": 48,
+  "long_metric_rows": 528,
+  "anchor_metric_rows": 66,
+  "all_requested_continuous_metrics": [
+    "allocation_epoch_count",
+    "allocator_call_count",
+    "work_s",
+    "work_per_call_s",
+    "mean_release_to_completion_latency_s",
+    "p95_release_to_completion_latency_s",
+    "online_mean_s",
+    "mission_elapsed_time_s",
+    "total_team_steps",
+    "max_robot_steps",
+    "logical_allocation_payload_bytes_sent_total"
+  ],
+  "trace_pairing": "scenario/release/runtime seed match",
+  "prior_point_estimate_reconciliation": "PASS for480 reused metric rows;48 max-step contrasts newly calculated",
+  "complete_50_pair_comparisons": 42,
+  "bootstrap_seed": 20260912,
+  "bootstrap_replicates": 10000,
+  "source_rows": "3000 corrected causal rows; online aggregates reused from previously verified task reconstruction",
+  "outcome_totals": {
+    "agx_causal": {
+      "planned": 3000,
+      "completed": 2940,
+      "failed": 60
+    },
+    "agx_zero_compute": {
+      "planned": 3000,
+      "completed": 3000,
+      "failed": 0
+    },
+    "rp2040": {
+      "planned": 96,
+      "completed": 82,
+      "failed": 14
+    }
+  }
+}

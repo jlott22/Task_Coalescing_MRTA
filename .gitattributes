@@ -4,3 +4,6 @@
 
 # Preserve immutable manifest bytes across Windows and Linux.
 /study/generated/manifests/** -text
+/corrected_agx_v7_results/** -text
+/corrected_hardware_v9_v10_progress/** -text
+/analysis/roboticcc_final/** -text

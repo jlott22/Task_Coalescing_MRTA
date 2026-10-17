@@ -1,0 +1,11 @@
+figure,check,observed,expected,status,notes
+Figure 1,schematic data dependency,labels and topology only,no numerical result data,PASS,
+Figure 2,plotted treatment points,48,48,PASS,
+Figure 2,allocator/load/policy uniqueness,48,48,PASS,
+Figure 2,incomplete paired cohorts annotated,6,6,PASS,
+Figure 2,missing plotted intervals,0,0,PASS,
+Figure 2,plotted values equal validated effects,0.0,0,PASS,
+Figure 3,matched trace/platform rows,8,8,PASS,
+Figure 3,adverse RP2040 trace retained,1,1,PASS,
+Figure 3,AGX aggregate matches summary,3.907985046680551e-14,0,PASS,
+Figure 3,RP2040 aggregate matches summary,2.1316282072803006e-14,0,PASS,

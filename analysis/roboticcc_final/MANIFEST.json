@@ -1,0 +1,647 @@
+{
+  "package": "analysis/roboticcc_final",
+  "purpose": "Reviewer-readable final RoboticCC data, claim, table, and MATLAB figure reproduction package.",
+  "generated_utc": "2026-09-16T17:46:35.657939+00:00",
+  "repository_commit_sha": "80c565dfaed53b1bf17e7624bc404fa744211d6d",
+  "dataset_identity": {
+    "corrected_agx_package": "corrected_agx_v7_results",
+    "corrected_hardware_package": "corrected_hardware_v9_v10_progress",
+    "final_data_handoff": "roboticcc_final_data (created 2026-09-12 UTC)",
+    "agx_producing_commit": "598485103ee270a27d8b684c0082e46e2ad53802",
+    "hardware_v9_producing_commit": "3fe1f578987088fc8f044741bd046ca4e5488267",
+    "hardware_v10_producing_commit": "a3490a7748d852af5b05f1df3caa1f86a44dda17",
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 20260912,
+    "interval": "pointwise percentile 95% trace bootstrap"
+  },
+  "matlab_version": "MATLAB 25.2.0.3123386 (R2025b) Update 3",
+  "final_manuscript": {
+    "package_path": "provenance/final_manuscript.tex",
+    "sha256": "652edf9ac3867851961362739dab4702b6c1d850a703e8a951daabd4d83f5549",
+    "bytes": 36842,
+    "source_role": "Newest RoboticCC Overleaf main.tex; reporting source of truth"
+  },
+  "authoritative_input_files": [
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_handoff/analysis/trial_level_compact.csv",
+      "bytes": 3275894,
+      "sha256": "a13efef9fee435717e15124ad68e1cc2973fcf6abdc723f717120333ed77a4fd"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/agx_causal_trial_inputs.csv",
+      "bytes": 1289369,
+      "sha256": "5d93acf1fef46c513bbd58844fa2226e08d6d588fc554cba43c28c229531c66f"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/hardware_successful_trials.csv",
+      "bytes": 330195,
+      "sha256": "8d9d3afe7b28c8458b478bbf7b1cd7a6db140d02d93648764a4178bf30ba8ddb"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/all_policy_effects_long.csv",
+      "bytes": 341924,
+      "sha256": "1c0598967ccb7fc0b4cebb93ddfa27dd5ba1fc458afce543de1ff4376de8b7bf"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/low_load_count4.csv",
+      "bytes": 20732,
+      "sha256": "94e0a6d40f060d1d2484a66e539183c06c02102c6f1d9093e0d2cdbf61e155c5"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/mechanism_decomposition.csv",
+      "bytes": 1645,
+      "sha256": "4b5195e6e24897f929f574ffe0d903d24ca94017bd7660f5f77ef3802bf42aba"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/anchor_rounds.csv",
+      "bytes": 9269,
+      "sha256": "af159f1dd3239c228c6857bb436379c3726ef92d7a86c6d845beef243e7f3238"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/hardware_platform_summary.csv",
+      "bytes": 34148,
+      "sha256": "ddfeb4e976984a33749384d38a3e80517903aed862f644c02d92a5ff7e7405af"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/completion_accounting.csv",
+      "bytes": 14551,
+      "sha256": "778b913232fc62cff4eb654ba6b12e6880eede01dba7a3a2dbb50def9288ff25"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/figure_sources/03_hardware_pairs.csv",
+      "bytes": 122943,
+      "sha256": "83d92399da15af24f4e2e8c04de0d00cbab33b696e2778179130725c77804048"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/completion_source_rows.csv",
+      "bytes": 583318,
+      "sha256": "c1468683429d78b3fec9a7367be997c6dcf2942b302c0a5778ebaf6de143a3fc"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/hardware_terminal_failed_jobs.csv",
+      "bytes": 1686,
+      "sha256": "5766ad89abbea198e07cd2e0c3e94145442db70bb316d0526d30a1ac7294eeb9"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/mechanism_decomposition_pairs.csv",
+      "bytes": 31989,
+      "sha256": "803c2957541a23acab223eaef1e89cba11cdfd8e23b51736ecb93c782e11d215"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/mechanism_online_wait_effects.csv",
+      "bytes": 11524,
+      "sha256": "404403535b49599092b2a601876794891e656459a111b737f61c7732be969e33"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/source_rows/hardware_design_metadata.json",
+      "bytes": 71689,
+      "sha256": "824457688b834d99118387fc5e557e3fe7dd4bce09b80bb0d7779ecf28853342"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "architecture_generality_audit/no_recovery_replay.csv",
+      "bytes": 2752,
+      "sha256": "c8cf83848ccac69364c7669a45b620b4cbf26ce7265aefdf98af18ef9f3225aa"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "architecture_generality_audit/anchor_metric_comparisons.csv",
+      "bytes": 55673,
+      "sha256": "48ce5c60c686412f10def81c09bb998331979b06085b20f0db6bc39019f2d22d"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_handoff/methods/trace_seeds_and_release_horizons.csv",
+      "bytes": 25113,
+      "sha256": "b30d654037628e645c8701d3646dfdc95d807ebdeae2c7f40ee619e766e9700e"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/FINAL_DATA_HANDOFF.md",
+      "bytes": 21369,
+      "sha256": "79f0079074eb0cc8808e7fbd3f1d02b5eae6be1fadcadd515e3cf5de5c5a9443"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/paper_methods_fact_sheet.md",
+      "bytes": 7387,
+      "sha256": "5b1797d7113df8fa5c4d1f55270a6f99125ae95d07808e3d7751bc9a1c61610a"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/manifest.json",
+      "bytes": 15996,
+      "sha256": "b04b8ca1186d123a675bd00911b770c0dd085aedd4fea7acf901cc633126be87"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/package_validation.json",
+      "bytes": 1311,
+      "sha256": "624c141ef43f34690edfc86928ee1154848abcad7f2a241df83377238022ed8c"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_final_data/table_validation.json",
+      "bytes": 1202,
+      "sha256": "d8df8d7bb1e14d3594d31649b94aab298d9ea1d20546922a9997230df23b0889"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "architecture_generality_audit/GENERALITY_AUDIT.md",
+      "bytes": 28159,
+      "sha256": "a92fde47a2f7d17042e1df56f80da609814d465c4d53971526c1f6e129cb0f7e"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_handoff/PROPOSED_NUMERICAL_CLAIMS.csv",
+      "bytes": 34267,
+      "sha256": "caa4cb478d65b3d7a1476c388176319e20cf07b881c5b76a134095c09388651e"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_handoff/methods/PROVENANCE.md",
+      "bytes": 9653,
+      "sha256": "b51da041a278bfe9d84666f4ab8e6416bcc06f017cdc92d15539e5b30320adc5"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "roboticcc_handoff/methods/METHODS_AND_METRICS.md",
+      "bytes": 23116,
+      "sha256": "74008f9a35c50df49ce361101245960f0810d5e3c4c6281d377ed68baba0ed4a"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "RoboticCC_Overleaf_Package/RoboticCC_Overleaf/main.tex",
+      "bytes": 21474,
+      "sha256": "95df1dc53a382ae460ed0f4c31acbeb817ff942b3fdde822fac75c8ca86e3c84"
+    },
+    {
+      "role": "authoritative_or_validated_input",
+      "repository_relative_path_or_source_name": "RoboticCC_Overleaf_Package/RoboticCC_Overleaf/main.tex",
+      "bytes": 36842,
+      "sha256": "652edf9ac3867851961362739dab4702b6c1d850a703e8a951daabd4d83f5549"
+    }
+  ],
+  "generated_output_files": [
+    {
+      "path": "checks/data_build_validation.json",
+      "bytes": 268,
+      "sha256": "2e5500a55f6c0585f4cd81080d28920620b04e458e62804aa44cac359477bad6",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "checks/figure_data_audit.csv",
+      "bytes": 633,
+      "sha256": "04ba2128aa7c70c732c89e46fe0ce8500679c02af6e4c8123cf363fa781fa5ed",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "checks/FINAL_REPRODUCIBILITY_AUDIT.md",
+      "bytes": 14439,
+      "sha256": "bbf47ab57399f1bd5a77f820285975c181e7e9713ff04c8c618e973a4ef34f33",
+      "generated_by": "package assembly"
+    },
+    {
+      "path": "checks/manuscript_number_audit.csv",
+      "bytes": 15933,
+      "sha256": "9e1e4320d4c54daa2225908d402353eb25623bc34633ceaf68e79cccebfce656",
+      "generated_by": "provenance/build_claim_audit.py"
+    },
+    {
+      "path": "checks/manuscript_number_audit_summary.csv",
+      "bytes": 50,
+      "sha256": "636716645cadc51ab85dd3fcfe9d672bfd62db422ff9c3951d8a4877115c7a77",
+      "generated_by": "provenance/build_claim_audit.py"
+    },
+    {
+      "path": "checks/matlab_version.txt",
+      "bytes": 40,
+      "sha256": "8e1c57f0840c83cb2f2724fe4ff5bb07decf18e76842696932caa53c0e09d54e",
+      "generated_by": "reviewer documentation (human-authored)"
+    },
+    {
+      "path": "checks/README.md",
+      "bytes": 2006,
+      "sha256": "f4d7449001db0f1a2fa0cd15c26a2310e22a57527115c718e99e7685be295be7",
+      "generated_by": "reviewer documentation (human-authored)"
+    },
+    {
+      "path": "checks/table_data_audit.csv",
+      "bytes": 2693,
+      "sha256": "40374052a93f1288355149cafe30febef40597bf84141f99f0cd60066c3831ff",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "CLAIM_SOURCE_MAP.csv",
+      "bytes": 21439,
+      "sha256": "4536e670e912d73f4815d39971730a3a363c55a731a1f4c5beb0acbf5704aa8d",
+      "generated_by": "provenance/build_claim_audit.py"
+    },
+    {
+      "path": "derived_data/agx_policy_pairs.csv",
+      "bytes": 1977279,
+      "sha256": "e9441ed8ec575317eea5418fe195c619ab740dfbef2a91926410f7d97338e4a0",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/all_policy_effects.csv",
+      "bytes": 341005,
+      "sha256": "5097d5731311c82662a6ad9983a9582bedb0220c713a5131f6e1cd1593f13f31",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/all_policy_effects_summary.csv",
+      "bytes": 88674,
+      "sha256": "9edb16b6f1e721ff4000679c52e1d064a71352717be6eb21959c6ce6f8d26dcb",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/anchor_examples.csv",
+      "bytes": 14927,
+      "sha256": "fc1fc4fb813470a06d0aa0b30bf6ae9c9733234486de85a792f34982a58da6fd",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/anchor_rounds.csv",
+      "bytes": 9198,
+      "sha256": "b65f21f35b03bda714f065cd4a071cec34d1a71b20ce41b3bb8517405751a5ee",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/completion_summary.csv",
+      "bytes": 11189,
+      "sha256": "5436657340d61af829b16e1b38e3292e632bcc222b47970b94bc10c0a16729a6",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/generality_anchor_metrics.csv",
+      "bytes": 51533,
+      "sha256": "7d68442118b337af8723c4b93b365c1ebdd97a135986647d7b3e6148f582f3d7",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/hardware_platform_summary.csv",
+      "bytes": 31518,
+      "sha256": "859feca4eb5cee032ab52ac18ad5a103f772e1b6ddb37150c7452c23add18920",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/hipc_medium_cross_platform.csv",
+      "bytes": 4643,
+      "sha256": "ad425aec5f851b19b3c262c82376a536785c31380f0325f5cb43cbdd1ea4ab3b",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/low_load_count4.csv",
+      "bytes": 20710,
+      "sha256": "978947ab4575b12cd0e5cad2757dbd6bdc25bb234b0d99b4cb43e04bc800eb01",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/mechanism_decomposition.csv",
+      "bytes": 1641,
+      "sha256": "e22c4ed103e96512920bb5eef7a3dc39b3ac0896b8a002b3cb96891ddc860eb3",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "derived_data/README.md",
+      "bytes": 4097,
+      "sha256": "4a409311dc28dd837f6b5198e40816326df962887a704b3694b27701a318341c",
+      "generated_by": "reviewer documentation (human-authored)"
+    },
+    {
+      "path": "derived_data/zero_compute_anchor_checks.csv",
+      "bytes": 545,
+      "sha256": "9be00787fff26b228336460f21abc2eabe947f3694b5eb87dc15ef23092b5195",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "figures/pdf/fig1_admission_architecture.pdf",
+      "bytes": 30955,
+      "sha256": "8e35ba14cf7a76713d51dc0add4888c73a7b56ad55398b966486f9ae52a489bf",
+      "generated_by": "matlab/fig1_admission_architecture.m"
+    },
+    {
+      "path": "figures/pdf/fig2_coalescing_regimes.pdf",
+      "bytes": 65635,
+      "sha256": "cb0b5d4fabd3798bcfe099abd8c74a1c764b8c2a10af573c557f5597bc9d17a0",
+      "generated_by": "matlab/fig2_coalescing_regimes.m"
+    },
+    {
+      "path": "figures/pdf/fig3_hipc_medium_hardware.pdf",
+      "bytes": 22124,
+      "sha256": "8e93cfaa0158c7bbd073f7c55c6e794ba83c415637b4c8d2ddaccf361638dcc9",
+      "generated_by": "matlab/fig3_hipc_medium_hardware.m"
+    },
+    {
+      "path": "figures/png/fig1_admission_architecture.png",
+      "bytes": 167116,
+      "sha256": "94fe07998969a5159603edfff773b3e74363b6634174ec27815aab6626ddcee2",
+      "generated_by": "matlab/fig1_admission_architecture.m"
+    },
+    {
+      "path": "figures/png/fig2_coalescing_regimes.png",
+      "bytes": 234507,
+      "sha256": "1586aec4f8a86df283571905e771ba5506a879600e1f810b33110be1ff0a1021",
+      "generated_by": "matlab/fig2_coalescing_regimes.m"
+    },
+    {
+      "path": "figures/png/fig3_hipc_medium_hardware.png",
+      "bytes": 102500,
+      "sha256": "a936314d25c6a39ffd7492aa00bac52f9bf5d2eb4ec72e747cd004a10a360f88",
+      "generated_by": "matlab/fig3_hipc_medium_hardware.m"
+    },
+    {
+      "path": "figures/source/fig1_admission_architecture.csv",
+      "bytes": 589,
+      "sha256": "9422cb5e9c68ad58afd9865d50855f82f42ff9292417f3ed863058fe70768dae",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "figures/source/fig2_coalescing_regimes.csv",
+      "bytes": 11541,
+      "sha256": "eb6ca130f1612765f1e25218edbaa9d16d23e3a6c8dcb825951a3d1d4214094a",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "figures/source/fig3_hipc_medium_hardware.csv",
+      "bytes": 4643,
+      "sha256": "ad425aec5f851b19b3c262c82376a536785c31380f0325f5cb43cbdd1ea4ab3b",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "matlab/common_formatting.m",
+      "bytes": 1017,
+      "sha256": "48e3d1045fc923c370837377bd3989cb1bfcb2a15ea309ae5915015d442e56cd",
+      "generated_by": "MATLAB reproduction source (human-authored)"
+    },
+    {
+      "path": "matlab/fig1_admission_architecture.m",
+      "bytes": 4201,
+      "sha256": "672e3bf5d752ce18216774f9808d12272b6c4b6c208eb064052bad9b8cb5f5be",
+      "generated_by": "MATLAB reproduction source (human-authored)"
+    },
+    {
+      "path": "matlab/fig2_coalescing_regimes.m",
+      "bytes": 5824,
+      "sha256": "3e1a29d9d4c68f478a33ada2991e61a17ad0ead9dd899d0359fd3e36c76d7550",
+      "generated_by": "MATLAB reproduction source (human-authored)"
+    },
+    {
+      "path": "matlab/fig3_hipc_medium_hardware.m",
+      "bytes": 4649,
+      "sha256": "9c88770c126c1614754d4d850bc0363341cd4f3dc90d0a740831e2ebe1917c92",
+      "generated_by": "MATLAB reproduction source (human-authored)"
+    },
+    {
+      "path": "matlab/make_all_figures.m",
+      "bytes": 386,
+      "sha256": "619f4a59e80fd67a529335c7143e5b1057b8e545e7e2aadfe2c3c9a2ca669478",
+      "generated_by": "MATLAB reproduction source (human-authored)"
+    },
+    {
+      "path": "provenance/authoritative_input_hashes.csv",
+      "bytes": 4596,
+      "sha256": "348cab5fa1edf69bfa2eaa08719ce107152ae1c852aad38b2f74fa286e79de77",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/build_claim_audit.py",
+      "bytes": 34929,
+      "sha256": "a247050272038ace8bee02bcd31b705d7eadcfc0c6a7b7a4d055fba8e91979ab",
+      "generated_by": "package reproduction source (human-authored)"
+    },
+    {
+      "path": "provenance/build_manifest.py",
+      "bytes": 4784,
+      "sha256": "835d6e04b32b3435135d60d7fe25b95ec71b8e23d3eecb5869f394f655631951",
+      "generated_by": "package reproduction source (human-authored)"
+    },
+    {
+      "path": "provenance/build_package.py",
+      "bytes": 37259,
+      "sha256": "6f8ba43fcbeeb203252856fdaabce4b13ff5f05e5a951a3efdeb1ab28201c977",
+      "generated_by": "package reproduction source (human-authored)"
+    },
+    {
+      "path": "provenance/FINAL_DATA_HANDOFF.md",
+      "bytes": 21369,
+      "sha256": "79f0079074eb0cc8808e7fbd3f1d02b5eae6be1fadcadd515e3cf5de5c5a9443",
+      "generated_by": "package assembly"
+    },
+    {
+      "path": "provenance/final_data_manifest.json",
+      "bytes": 15996,
+      "sha256": "b04b8ca1186d123a675bd00911b770c0dd085aedd4fea7acf901cc633126be87",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/final_data_validation.json",
+      "bytes": 1311,
+      "sha256": "624c141ef43f34690edfc86928ee1154848abcad7f2a241df83377238022ed8c",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/final_manuscript.tex",
+      "bytes": 36842,
+      "sha256": "652edf9ac3867851961362739dab4702b6c1d850a703e8a951daabd4d83f5549",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/final_table_validation.json",
+      "bytes": 1202,
+      "sha256": "d8df8d7bb1e14d3594d31649b94aab298d9ea1d20546922a9997230df23b0889",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/GENERALITY_AUDIT.md",
+      "bytes": 28159,
+      "sha256": "a92fde47a2f7d17042e1df56f80da609814d465c4d53971526c1f6e129cb0f7e",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/handoff_proposed_numerical_claims.csv",
+      "bytes": 34267,
+      "sha256": "caa4cb478d65b3d7a1476c388176319e20cf07b881c5b76a134095c09388651e",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/paper_methods_fact_sheet.md",
+      "bytes": 7387,
+      "sha256": "5b1797d7113df8fa5c4d1f55270a6f99125ae95d07808e3d7751bc9a1c61610a",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/phase1_claim_ledger.csv",
+      "bytes": 20094,
+      "sha256": "6ad5b58ab415c61789762308940212265aefa620ca88db9e9bec452493a6d111",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/upstream_methods_and_metrics.md",
+      "bytes": 23116,
+      "sha256": "74008f9a35c50df49ce361101245960f0810d5e3c4c6281d377ed68baba0ed4a",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/upstream_provenance.md",
+      "bytes": 9653,
+      "sha256": "b51da041a278bfe9d84666f4ab8e6416bcc06f017cdc92d15539e5b30320adc5",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "provenance/verify_package.py",
+      "bytes": 1104,
+      "sha256": "cbfa401268aa1177d4f423db77639c1cd05f799c35934463c3d28c68a5624f5d",
+      "generated_by": "package assembly"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7110,
+      "sha256": "236b47ebea3b51d678cc75a820206609c39bb58cfbb303f1c1c6da460a270243",
+      "generated_by": "reviewer documentation (human-authored)"
+    },
+    {
+      "path": "source_data/agx_causal_trial_level.csv",
+      "bytes": 1289369,
+      "sha256": "5d93acf1fef46c513bbd58844fa2226e08d6d588fc554cba43c28c229531c66f",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/agx_effects_validated.csv",
+      "bytes": 341924,
+      "sha256": "1c0598967ccb7fc0b4cebb93ddfa27dd5ba1fc458afce543de1ff4376de8b7bf",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/agx_zero_compute_trial_level.csv",
+      "bytes": 1594241,
+      "sha256": "7c33313932c6df08340d63ff92200a40b5471ccecc8b4808e93b97c696b7a336",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/anchor_rounds_validated.csv",
+      "bytes": 9269,
+      "sha256": "af159f1dd3239c228c6857bb436379c3726ef92d7a86c6d845beef243e7f3238",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/completion_accounting_validated.csv",
+      "bytes": 14551,
+      "sha256": "778b913232fc62cff4eb654ba6b12e6880eede01dba7a3a2dbb50def9288ff25",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/completion_records.csv",
+      "bytes": 583318,
+      "sha256": "c1468683429d78b3fec9a7367be997c6dcf2942b302c0a5778ebaf6de143a3fc",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/generality_anchor_metrics.csv",
+      "bytes": 55673,
+      "sha256": "48ce5c60c686412f10def81c09bb998331979b06085b20f0db6bc39019f2d22d",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/hardware_design_metadata.json",
+      "bytes": 71689,
+      "sha256": "824457688b834d99118387fc5e557e3fe7dd4bce09b80bb0d7779ecf28853342",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/hardware_platform_summary_validated.csv",
+      "bytes": 34148,
+      "sha256": "ddfeb4e976984a33749384d38a3e80517903aed862f644c02d92a5ff7e7405af",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/low_load_count4_validated.csv",
+      "bytes": 20732,
+      "sha256": "94e0a6d40f060d1d2484a66e539183c06c02102c6f1d9093e0d2cdbf61e155c5",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/mechanism_decomposition_pairs.csv",
+      "bytes": 31989,
+      "sha256": "803c2957541a23acab223eaef1e89cba11cdfd8e23b51736ecb93c782e11d215",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/mechanism_decomposition_validated.csv",
+      "bytes": 1645,
+      "sha256": "4b5195e6e24897f929f574ffe0d903d24ca94017bd7660f5f77ef3802bf42aba",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/online_wait_effects_validated.csv",
+      "bytes": 11524,
+      "sha256": "404403535b49599092b2a601876794891e656459a111b737f61c7732be969e33",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/platform_policy_pairs.csv",
+      "bytes": 122943,
+      "sha256": "83d92399da15af24f4e2e8c04de0d00cbab33b696e2778179130725c77804048",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/README.md",
+      "bytes": 1261,
+      "sha256": "dd281e48f5f8862b712803b371255a2d3647b4d59bfc9957c4aad4b2e23895d4",
+      "generated_by": "reviewer documentation (human-authored)"
+    },
+    {
+      "path": "source_data/recovery_disabled_replays.csv",
+      "bytes": 2752,
+      "sha256": "c8cf83848ccac69364c7669a45b620b4cbf26ce7265aefdf98af18ef9f3225aa",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/rp2040_terminal_failures.csv",
+      "bytes": 1686,
+      "sha256": "5766ad89abbea198e07cd2e0c3e94145442db70bb316d0526d30a1ac7294eeb9",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/rp2040_trial_level.csv",
+      "bytes": 330195,
+      "sha256": "8d9d3afe7b28c8458b478bbf7b1cd7a6db140d02d93648764a4178bf30ba8ddb",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "source_data/trace_seeds_and_release_horizons.csv",
+      "bytes": 25113,
+      "sha256": "b30d654037628e645c8701d3646dfdc95d807ebdeae2c7f40ee619e766e9700e",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "tables/table1_experiment_design.csv",
+      "bytes": 619,
+      "sha256": "c7c114194243a757e1b3145c41d25aa35048ac28ce228b537f1df6b72ac5b640",
+      "generated_by": "provenance/build_package.py"
+    },
+    {
+      "path": "tables/table2_anchor_mechanisms.csv",
+      "bytes": 5180,
+      "sha256": "ef48e2dabe5e7b132d5a818c2174523bd14ca562e73d857889a1f9ec73064040",
+      "generated_by": "provenance/build_package.py"
+    }
+  ],
+  "manifest_hash_note": "MANIFEST.json excludes itself; rerunning this script refreshes timestamps and all file hashes."
+}

@@ -1,0 +1,25 @@
+table,check,observed,expected,status,notes
+Table I,AGX causal,"(3000, 2940, 60)","(3000, 2940, 60)",PASS,
+Table I,AGX zero-compute,"(3000, 3000, 0)","(3000, 3000, 0)",PASS,
+Table I,RP2040 HIL,"(96, 82, 14)","(96, 82, 14)",PASS,
+Table II,condition count,2,2,PASS,
+Table II,rows per condition,"{'CBAA high / Count b=4': 9, 'HIPC high / Bounded b=4, W=10 s': 9}",9 each,PASS,
+Table II,required endpoint coverage,7,7,PASS,
+Table II,"HIPC high / Bounded b=4, W=10 s: Admission epochs",43.00 to 12.12,43.00 to 12.12,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Allocator calls",1009.90 to 835.50,1009.90 to 835.50,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Mean work per call",1.631 to 1.565,1.631 to 1.565,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Total allocator work",1.678 to 1.353,1.678 to 1.353,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Mean task latency",32.37 to 33.77,32.37 to 33.77,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Mean within-mission p95",88.88 to 89.18,88.88 to 89.18,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Mission duration",140.42 to 138.88,140.42 to 138.88,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Call-count term",-274.29,-274.29,PASS,Compared with main.tex lines 213-222
+Table II,"HIPC high / Bounded b=4, W=10 s: Per-call-work term",-50.32,-50.32,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Admission epochs,43.00 to 12.00,43.00 to 12.00,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Allocator calls,461.08 to 495.36,461.08 to 495.36,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Mean work per call,0.304 to 0.348,0.304 to 0.348,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Total allocator work,0.1405 to 0.1726,0.1405 to 0.1726,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Mean task latency,27.02 to 31.22,27.02 to 31.22,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Mean within-mission p95,65.90 to 73.13,65.90 to 73.13,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Mission duration,117.78 to 142.18,117.78 to 142.18,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Call-count term,+11.46,+11.46,PASS,Compared with main.tex lines 213-222
+Table II,CBAA high / Count b=4: Per-call-work term,+20.61,+20.61,PASS,Compared with main.tex lines 213-222

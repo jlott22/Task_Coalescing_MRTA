@@ -1,0 +1,4 @@
+campaign,timing_provider,allocators,arrival_loads,policies,traces_per_condition,planned_missions,complete_or_successful,other_outcomes,other_outcome_definition,source_file,source_filter
+AGX causal,agx_causal,4,3,5,50,3000,2940,60,algorithmic noncompletions,derived_data/completion_summary.csv,"scope=provider_total,provider=agx_causal"
+AGX zero-compute,agx_zero_compute,4,3,5,50,3000,3000,0,none,derived_data/completion_summary.csv,"scope=provider_total,provider=agx_zero_compute"
+RP2040 HIL,rp2040,4,3,2,4,96,82,14,terminal technical failures,derived_data/completion_summary.csv,"scope=provider_total,provider=rp2040"

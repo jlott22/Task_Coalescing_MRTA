@@ -1,0 +1,448 @@
+{
+  "package": "roboticcc_final_data",
+  "created_utc": "2026-09-12T19:07:55.595282+00:00",
+  "scope": "Final quantitative extraction from corrected retained results; no production experiments or hardware access.",
+  "repository_head_at_extraction": "80c565dfaed53b1bf17e7624bc404fa744211d6d",
+  "agx_campaigns": [
+    {
+      "algorithmic_completed": 1470,
+      "algorithmic_incomplete": 30,
+      "campaign_id": "corrected_round1_causal_v7",
+      "round": "round1",
+      "source_commit": "598485103ee270a27d8b684c0082e46e2ad53802",
+      "source_tree_sha256": "49b978dd91f3e30388d913f090454ec645459f246d8daa4e7e754127a13bfc7c",
+      "technical_completed": 1500,
+      "timing_arm": "causal",
+      "trace_max": 24,
+      "trace_min": 0
+    },
+    {
+      "algorithmic_completed": 1500,
+      "algorithmic_incomplete": 0,
+      "campaign_id": "corrected_round1_zero_v7",
+      "round": "round1",
+      "source_commit": "598485103ee270a27d8b684c0082e46e2ad53802",
+      "source_tree_sha256": "49b978dd91f3e30388d913f090454ec645459f246d8daa4e7e754127a13bfc7c",
+      "technical_completed": 1500,
+      "timing_arm": "zero_compute",
+      "trace_max": 24,
+      "trace_min": 0
+    },
+    {
+      "algorithmic_completed": 1470,
+      "algorithmic_incomplete": 30,
+      "campaign_id": "corrected_round2_causal_v7",
+      "round": "round2",
+      "source_commit": "598485103ee270a27d8b684c0082e46e2ad53802",
+      "source_tree_sha256": "49b978dd91f3e30388d913f090454ec645459f246d8daa4e7e754127a13bfc7c",
+      "technical_completed": 1500,
+      "timing_arm": "causal",
+      "trace_max": 49,
+      "trace_min": 25
+    },
+    {
+      "algorithmic_completed": 1500,
+      "algorithmic_incomplete": 0,
+      "campaign_id": "corrected_round2_zero_v7",
+      "round": "round2",
+      "source_commit": "598485103ee270a27d8b684c0082e46e2ad53802",
+      "source_tree_sha256": "49b978dd91f3e30388d913f090454ec645459f246d8daa4e7e754127a13bfc7c",
+      "technical_completed": 1500,
+      "timing_arm": "zero_compute",
+      "trace_max": 49,
+      "trace_min": 25
+    }
+  ],
+  "hardware_campaigns": {
+    "corrected_hardware_core_96_v10_continuation": {
+      "git_head": "a3490a7748d852af5b05f1df3caa1f86a44dda17",
+      "source_tree_sha256": "895b1584cf51aa2adf31aa5c197f1e24514af08667b507b055c39955e85d77d6"
+    },
+    "corrected_hardware_core_96_v9": {
+      "git_head": "3fe1f578987088fc8f044741bd046ca4e5488267",
+      "source_tree_sha256": "4dc06c3d1edcae1722ad3295e412fa863ced136415528bb840cd0b0c421724fe"
+    }
+  },
+  "analysis_runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1"
+  },
+  "statistical_identity": {
+    "replicate": "trace",
+    "planned_agx_traces": 50,
+    "bootstrap_draws": 10000,
+    "seed": 20260912,
+    "interval": "pointwise percentile95",
+    "complete_pair_effects_only": true
+  },
+  "precision_note": "Primary point estimates use corrected trial precision. Preverified online aggregates/intervals retain prior serialized precision; portable regeneration preserves that evidence.",
+  "authoritative_or_preverified_repository_inputs": [
+    {
+      "path": "corrected_agx_v7_results/trial_level.csv.gz",
+      "bytes": 2993430,
+      "sha256": "2b7c8975de20a16ba18ca6c6fc6ec836512a82ca5b3a42c664ab64b6c05f2e6b"
+    },
+    {
+      "path": "corrected_agx_v7_results/task_level.csv.gz",
+      "bytes": 36459985,
+      "sha256": "865e2c840058bf96e84db62eda1b4e47f923c539a3592272d27f7e22fec63e44"
+    },
+    {
+      "path": "corrected_agx_v7_results/export_manifest.json",
+      "bytes": 5441,
+      "sha256": "cb9f517acbcf320801afc1028a83ef30148c4b52a7e57aad9abf8ff3b76b0184"
+    },
+    {
+      "path": "corrected_hardware_v9_v10_progress/trial_level.csv.gz",
+      "bytes": 44469,
+      "sha256": "27bcc03284a4260fa2b6a6dd36f8826c1e75e067f85835d62782e1936422f7f3"
+    },
+    {
+      "path": "corrected_hardware_v9_v10_progress/terminal_failures.csv",
+      "bytes": 1671,
+      "sha256": "7ae69a7b5b429b44d3b720a2abb3974ed10b1f83b6419ac4067cd92f3bd1bb33",
+      "data_rows": 14
+    },
+    {
+      "path": "corrected_hardware_v9_v10_progress/export_manifest.json",
+      "bytes": 3816,
+      "sha256": "4dd6b2719c8aaab254ccd9beea33d72b23ad4d2d77b590c4b0533cbe55c9995e"
+    },
+    {
+      "path": "corrected_hardware_v9_v10_progress/provenance/corrected_hardware_core_96_v9__causal_schedule.json",
+      "bytes": 90048,
+      "sha256": "5d00878db158fd827a8dec0834150417289ce17e45c9338c50373d188d308f3b"
+    },
+    {
+      "path": "corrected_hardware_v9_v10_progress/provenance/corrected_hardware_core_96_v10_continuation__causal_schedule.json",
+      "bytes": 66819,
+      "sha256": "dc0a0c9a182ba4e5ab675b2b0a7a3be020e73476869800040a936ef356eb0642"
+    },
+    {
+      "path": "roboticcc_handoff/analysis/paired_effect_summary.csv",
+      "bytes": 589345,
+      "sha256": "8731b0c4e53721b88cabfee91c01a994710922ec810b20a43188c85f35dc1381",
+      "data_rows": 1956
+    },
+    {
+      "path": "roboticcc_handoff/analysis/task_population_summary.csv",
+      "bytes": 1377374,
+      "sha256": "2c1a9d2573b877017912f2cf4320deaab72550c3dc54d0bd539502e9df5f5804",
+      "data_rows": 6000
+    },
+    {
+      "path": "roboticcc_handoff/analysis/trial_level_compact.csv",
+      "bytes": 3275894,
+      "sha256": "a13efef9fee435717e15124ad68e1cc2973fcf6abdc723f717120333ed77a4fd",
+      "data_rows": 6082
+    },
+    {
+      "path": "roboticcc_handoff/analysis/reproduce_analysis.py",
+      "bytes": 30028,
+      "sha256": "399e98a6bad4178393b7d20f22437ecbe634d6522d315b90940caca51787e5b4"
+    },
+    {
+      "path": "roboticcc_handoff/analysis/rebootstrap_compact.py",
+      "bytes": 1697,
+      "sha256": "c1832e1caacfbfe41ec945e7e90fff30496fc2363a6ee8e45956412a5b5e27b8"
+    },
+    {
+      "path": "roboticcc_handoff/methods/METHODS_AND_METRICS.md",
+      "bytes": 23116,
+      "sha256": "74008f9a35c50df49ce361101245960f0810d5e3c4c6281d377ed68baba0ed4a"
+    },
+    {
+      "path": "roboticcc_handoff/methods/SOURCE_EXCERPTS.md",
+      "bytes": 25136,
+      "sha256": "35f7a4ea4e11d29c71fa1d9dbd00238f3439f47eadd8bb3f398530b430bc9174"
+    },
+    {
+      "path": "roboticcc_handoff/methods/PROVENANCE.md",
+      "bytes": 9653,
+      "sha256": "b51da041a278bfe9d84666f4ab8e6416bcc06f017cdc92d15539e5b30320adc5"
+    }
+  ],
+  "public_predecessors": [
+    {
+      "title": "Decentralized Multi-Robot Task Allocation Under Degraded Communication: A Benchmark of Performance, Reliability, and Computation.",
+      "path": "C:\\Users\\lottj\\Downloads\\In_progress___CV_benchmark (19).pdf",
+      "bytes": 658705,
+      "sha256": "b31095f7baadd0676c2d4db5ac2ba13dab483150ee2221f190ab5129f9bdeebb",
+      "included_in_zip": false
+    },
+    {
+      "title": "Bundle Length Tradeoffs in Decentralized Multi-Robot Task Allocation Under Degraded Communications.",
+      "path": "C:\\Users\\lottj\\Downloads\\Lott_Honary_IPCCC2026.pdf",
+      "bytes": 446985,
+      "sha256": "ab49b9bd46b48e9814b8691d46c4e9084bf860c24b830710eb0113df7e8e99d3",
+      "included_in_zip": false
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "all_policy_effects_long.csv",
+      "bytes": 341924,
+      "sha256": "1c0598967ccb7fc0b4cebb93ddfa27dd5ba1fc458afce543de1ff4376de8b7bf",
+      "data_rows": 528
+    },
+    {
+      "path": "all_policy_paired_effects.csv",
+      "bytes": 131788,
+      "sha256": "0cf785d530c7ef6e5321271c62480fecdfa0517522323d59bd3835a1752c60e3",
+      "data_rows": 48
+    },
+    {
+      "path": "anchor_examples.csv",
+      "bytes": 43320,
+      "sha256": "61de358a2aaf865f9d671db7b921b48ab9ec466edaa80ec93b7d47da761c53fa",
+      "data_rows": 66
+    },
+    {
+      "path": "anchor_rounds.csv",
+      "bytes": 9269,
+      "sha256": "af159f1dd3239c228c6857bb436379c3726ef92d7a86c6d845beef243e7f3238",
+      "data_rows": 44
+    },
+    {
+      "path": "completion_accounting.csv",
+      "bytes": 14551,
+      "sha256": "778b913232fc62cff4eb654ba6b12e6880eede01dba7a3a2dbb50def9288ff25",
+      "data_rows": 159
+    },
+    {
+      "path": "compute_gap_summary.csv",
+      "bytes": 6545,
+      "sha256": "4d566c99c1ab7c385253c93e08d49fa48e55a6e37b19e90cb398b137a1c1b3e1",
+      "data_rows": 5
+    },
+    {
+      "path": "DATA_DICTIONARY.md",
+      "bytes": 9614,
+      "sha256": "d61f92d10ec228341120a8a4ae8d516e1c4ae0feb770b151e1092ce6dcd80757"
+    },
+    {
+      "path": "end_of_mission_work.md",
+      "bytes": 2204,
+      "sha256": "374d293b698ee81c7b4a61bf65316f48adf95362e7a529280d5bfcdb78ff3973"
+    },
+    {
+      "path": "figure_sources/01_regime_scatter.csv",
+      "bytes": 15556,
+      "sha256": "f8d558bbf0992f5ddb5fa22e79bbd0af051f2c261e4bf572f8b909345d73dce3",
+      "data_rows": 48
+    },
+    {
+      "path": "figure_sources/02_mechanism.csv",
+      "bytes": 14268,
+      "sha256": "9e8fc6be04cf5b1c460b7a8e7eb9a6fa88451d97653ffddcc2e5717c06e646b3",
+      "data_rows": 20
+    },
+    {
+      "path": "figure_sources/03_hardware_pairs.csv",
+      "bytes": 122943,
+      "sha256": "83d92399da15af24f4e2e8c04de0d00cbab33b696e2778179130725c77804048",
+      "data_rows": 96
+    },
+    {
+      "path": "figure_sources/04_completion.csv",
+      "bytes": 14551,
+      "sha256": "778b913232fc62cff4eb654ba6b12e6880eede01dba7a3a2dbb50def9288ff25",
+      "data_rows": 159
+    },
+    {
+      "path": "FINAL_DATA_HANDOFF.md",
+      "bytes": 21369,
+      "sha256": "79f0079074eb0cc8808e7fbd3f1d02b5eae6be1fadcadd515e3cf5de5c5a9443"
+    },
+    {
+      "path": "hardware_agx_matched_trials.csv",
+      "bytes": 77451,
+      "sha256": "fb5f063270f7a01597647108d078f08e087baf3068fac45732b393a12b2156aa",
+      "data_rows": 82
+    },
+    {
+      "path": "hardware_notes.md",
+      "bytes": 11514,
+      "sha256": "3393c13cfb1aa14eb9200590151cddf68fb6a9ba64a2908dd02e862b331d6bb4"
+    },
+    {
+      "path": "hardware_platform_summary.csv",
+      "bytes": 34148,
+      "sha256": "ddfeb4e976984a33749384d38a3e80517903aed862f644c02d92a5ff7e7405af",
+      "data_rows": 24
+    },
+    {
+      "path": "hardware_provenance.json",
+      "bytes": 2208,
+      "sha256": "bbfdfb94186d577720326dbe1c8ddd46fa74f6c6f5892281915b8de826f958ab"
+    },
+    {
+      "path": "hardware_validation.json",
+      "bytes": 976,
+      "sha256": "c19140524dca7c738f9d078e603fc579f7c2d60339e3c9ff89b79df19df1d74a"
+    },
+    {
+      "path": "low_load_count4.csv",
+      "bytes": 20732,
+      "sha256": "94e0a6d40f060d1d2484a66e539183c06c02102c6f1d9093e0d2cdbf61e155c5",
+      "data_rows": 4
+    },
+    {
+      "path": "mechanism_decomposition.csv",
+      "bytes": 1645,
+      "sha256": "4b5195e6e24897f929f574ffe0d903d24ca94017bd7660f5f77ef3802bf42aba",
+      "data_rows": 2
+    },
+    {
+      "path": "mechanism_notes.md",
+      "bytes": 9306,
+      "sha256": "aef9bf5d7e02f379e08a7e972f2b6c7deaf2b0a3e06b59afc98c226d6bb65893"
+    },
+    {
+      "path": "package_validation.json",
+      "bytes": 1311,
+      "sha256": "624c141ef43f34690edfc86928ee1154848abcad7f2a241df83377238022ed8c"
+    },
+    {
+      "path": "paper_methods_fact_sheet.md",
+      "bytes": 7387,
+      "sha256": "5b1797d7113df8fa5c4d1f55270a6f99125ae95d07808e3d7751bc9a1c61610a"
+    },
+    {
+      "path": "predecessor_overlap.md",
+      "bytes": 6228,
+      "sha256": "d95851bb0e1fd31d7c8c7144ea54efef6619f34c80f4ef4ef06213754b532ce6"
+    },
+    {
+      "path": "regime_map.csv",
+      "bytes": 96701,
+      "sha256": "d9123a1731e31ce669d2868612df0eddf36391eecc199b40a59812127944cb99",
+      "data_rows": 48
+    },
+    {
+      "path": "REPRODUCE.md",
+      "bytes": 2640,
+      "sha256": "5935cc5dcb502c900c3d20833a451de79dca797a54eb6a9cf2b6b44b9c1932db"
+    },
+    {
+      "path": "rp2040_pairs.csv",
+      "bytes": 66896,
+      "sha256": "146aa046fc75405a0bee18f06b853acaf5bbeb8c1e2886e6f4f68dcb873f9232",
+      "data_rows": 48
+    },
+    {
+      "path": "rp2040_summary.csv",
+      "bytes": 19181,
+      "sha256": "92b56e3e4a5a705c8775f505cad38d80d4169a49df1b913e182d04858639e2bf",
+      "data_rows": 12
+    },
+    {
+      "path": "scripts/build_handoff.py",
+      "bytes": 20057,
+      "sha256": "f98928f3fcdfcca2f750217909c579063f736ff61b004692153896c03a1155ef"
+    },
+    {
+      "path": "scripts/build_hardware.py",
+      "bytes": 30875,
+      "sha256": "44c35ff34aaab1738cded735074d1942f150e5cc974dcdbfd8de22cd272facf0"
+    },
+    {
+      "path": "scripts/build_mechanisms.py",
+      "bytes": 25795,
+      "sha256": "56e53b5a4cdc1c8b735d9e6e88b7be1f85f46b1c44dc32e1a4b72ba8991d3485"
+    },
+    {
+      "path": "scripts/build_paper_tables.py",
+      "bytes": 13594,
+      "sha256": "7fd641c9248988bece8002b45414b9435a4753732d8c27ec659ecc635799af91"
+    },
+    {
+      "path": "scripts/finalize_package.py",
+      "bytes": 4637,
+      "sha256": "496553f6ce3870e92cc6a73e4f01cf65694920d77a9bd34d6734e2291d5ba177"
+    },
+    {
+      "path": "source_rows/agx_causal_trial_inputs.csv",
+      "bytes": 1289369,
+      "sha256": "5d93acf1fef46c513bbd58844fa2226e08d6d588fc554cba43c28c229531c66f",
+      "data_rows": 3000
+    },
+    {
+      "path": "source_rows/anchor_paired_trace_values.csv",
+      "bytes": 250750,
+      "sha256": "ae036f713743c13ae8b3e2bbd13e4bea35859199b74b4f0b2721f0cfcc0b91d2",
+      "data_rows": 300
+    },
+    {
+      "path": "source_rows/completion_source_rows.csv",
+      "bytes": 583318,
+      "sha256": "c1468683429d78b3fec9a7367be997c6dcf2942b302c0a5778ebaf6de143a3fc",
+      "data_rows": 6096
+    },
+    {
+      "path": "source_rows/hardware_agx_policy_pairs.csv",
+      "bytes": 55370,
+      "sha256": "f32773ded3746db2f953a6815772d1f760624b3ee083a95eaf4ef641482346d8",
+      "data_rows": 48
+    },
+    {
+      "path": "source_rows/hardware_corresponding_agx_trials.csv",
+      "bytes": 376089,
+      "sha256": "242f7d19523b2e07972dc6a705ce5e046b8616c108619b91b802bc74f90fa120",
+      "data_rows": 96
+    },
+    {
+      "path": "source_rows/hardware_design_metadata.json",
+      "bytes": 71689,
+      "sha256": "824457688b834d99118387fc5e557e3fe7dd4bce09b80bb0d7779ecf28853342"
+    },
+    {
+      "path": "source_rows/hardware_successful_trials.csv",
+      "bytes": 330195,
+      "sha256": "8d9d3afe7b28c8458b478bbf7b1cd7a6db140d02d93648764a4178bf30ba8ddb",
+      "data_rows": 82
+    },
+    {
+      "path": "source_rows/hardware_terminal_failed_jobs.csv",
+      "bytes": 1686,
+      "sha256": "5766ad89abbea198e07cd2e0c3e94145442db70bb316d0526d30a1ac7294eeb9",
+      "data_rows": 14
+    },
+    {
+      "path": "source_rows/mechanism_decomposition_pairs.csv",
+      "bytes": 31989,
+      "sha256": "803c2957541a23acab223eaef1e89cba11cdfd8e23b51736ecb93c782e11d215",
+      "data_rows": 100
+    },
+    {
+      "path": "source_rows/mechanism_online_wait_effects.csv",
+      "bytes": 11524,
+      "sha256": "404403535b49599092b2a601876794891e656459a111b737f61c7732be969e33",
+      "data_rows": 48
+    },
+    {
+      "path": "source_rows/mechanism_task_supplement.csv",
+      "bytes": 256326,
+      "sha256": "72ae7b624ccb896fb9b58e1dd6c714cc4664cdc07e3d2ce6fa2aa052e8ad7ee8",
+      "data_rows": 3000
+    },
+    {
+      "path": "source_rows/predecessor_evidence.md",
+      "bytes": 3471,
+      "sha256": "635a1def4b8e940bc79c5317e1490683f54796865267d0e65a1d16845a279bec"
+    },
+    {
+      "path": "source_rows/validated_prior_effects.csv",
+      "bytes": 166250,
+      "sha256": "139e81800380f6a7e506c9503fc478d9dbd7131c4fd22e70e495688c725f4350",
+      "data_rows": 480
+    },
+    {
+      "path": "table_validation.json",
+      "bytes": 1202,
+      "sha256": "d8df8d7bb1e14d3594d31649b94aab298d9ea1d20546922a9997230df23b0889"
+    }
+  ],
+  "manifest_hash_note": "manifest.sha256 contains the SHA-256 of this file; the manifest excludes itself and its hash file."
+}

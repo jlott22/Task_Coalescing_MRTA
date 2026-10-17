@@ -1,0 +1,9 @@
+from_id,from_label,to_id,relationship
+release,Task release,pending,enters environmental queue
+pending,Pending queue,rule,release and admission are distinct
+rule,Eager / Count / Bounded rule,announce,threshold or deadline
+announce,Reliable task-admission announcement,pool,robot-local delivery
+pool,Robot-local known-task pool,allocator,retained local knowledge
+allocator,Decentralized allocator transaction,state,local virtual processor only
+state,Retained goal and path state,execution,no destructive reset
+execution,Physical or simulated execution,allocator,completion and peer feedback

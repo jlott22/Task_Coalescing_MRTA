@@ -1,0 +1,289 @@
+comparison,provider,algorithm,arrival_load,policy,planned_pairs,both_complete_pairs,metric_n,metric,eager_mean,policy_mean,paired_mean_difference,ratio_of_paired_means_pct,policy_lower_n,policy_equal_n,policy_higher_n,provenance
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,admissions_per_mission,43,12.12,-30.88,-71.813953,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,admissions_per_mission_s,0.313003508,0.088930006,-0.224073502,-71.588176,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,allocator_calls_per_mission,1009.9,835.5,-174.4,-17.269037,39,0,11,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,allocator_calls_per_mission_s,7.267604545,6.02242756,-1.245176985,-17.133252,41,0,9,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,processor_work_s_per_mission,1.677608488,1.35299903,-0.324609458,-19.349536,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_admitted_task,0.03355217,0.027059981,-0.006492189,-19.349536,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_released_online_task,0.039943059,0.032214263,-0.007728797,-19.349536,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_mission_s,0.012142695,0.009726873,-0.002415822,-19.895268,37,0,13,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_call,0.001630922,0.001565144,-6.5778e-05,-4.033157,33,0,17,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,release_to_admission_s_online,0,2.685918223,2.685918223,,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,admission_to_completion_s_online,30.854474049,29.73500939,-1.119464659,-3.628209,29,0,21,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,release_to_completion_s_online,30.854474049,32.420927613,1.566453563,5.076909,20,0,30,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,release_to_completion_s_all50,32.366856224,33.771726163,1.404869939,4.340458,20,0,30,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,release_to_completion_s_first40_online,31.032448145,32.470766537,1.438318391,4.634885,21,0,29,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,mission_duration_s,140.423948678,138.876789484,-1.547159194,-1.101777,29,0,21,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,terminal_residual_tasks_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,online_tasks_with_recorded_first_current_goal,40.7,40.74,0.04,0.09828,13,18,19,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.587590684,0.54419313,-0.043397554,-7.385678,31,0,19,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,6,admission_to_first_current_goal_s_online_complete42_only,21.748511132,20.173609483,-1.574901648,-7.241423,4,0,2,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,epoch_listed_calls_per_mission,172,48.48,-123.52,-71.813953,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,non_epoch_listed_calls_per_mission,837.9,787.02,-50.88,-6.072324,31,0,19,AGX task+epoch streams and compact pairs
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,20.518939772,19.561184406,-0.957755365,-4.667665,32,0,18,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+agx_hipc_high_bounded,agx,HIPC,high,bounded_b4_w10,50,50,50,paired_online_tasks_with_recorded_goal_both,39.66,39.66,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,admissions_per_mission_s,0.3684742,0.085425427,-0.283048773,-76.816443,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,allocator_calls_per_mission,461.08,495.36,34.28,7.434718,18,0,32,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,allocator_calls_per_mission_s,3.920232405,3.478428539,-0.441803866,-11.269839,44,0,6,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,processor_work_s_per_mission,0.14053266,0.172608976,0.032076317,22.824813,8,0,42,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,work_s_per_admitted_task,0.002810653,0.00345218,0.000641526,22.824813,8,0,42,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,work_s_per_released_online_task,0.003346016,0.004109738,0.000763722,22.824813,8,0,42,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,work_s_per_mission_s,0.001192561,0.001210489,1.7928e-05,1.50336,25,0,25,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,work_s_per_call,0.000304298,0.000347514,4.3217e-05,14.202072,2,0,48,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,release_to_admission_s_online,0,4.833476589,4.833476589,,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,admission_to_completion_s_online,27.015437766,27.368640764,0.353202998,1.307412,26,0,24,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,release_to_completion_s_online,27.015437766,32.202117353,5.186679587,19.198947,3,0,47,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,release_to_completion_s_all50,27.015948114,31.223439791,4.207491677,15.574103,3,0,47,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,release_to_completion_s_first40_online,27.22812869,30.425485274,3.197356584,11.742844,9,0,41,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,mission_duration_s,117.78465338,142.175133918,24.390480538,20.70769,2,0,48,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,40.02,39.9,-0.12,-0.29985,22,10,18,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,18.90438979,18.53850227,-0.36588752,-1.935463,27,0,23,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,2,admission_to_first_current_goal_s_online_complete42_only,19.812824061,17.177149149,-2.635674913,-13.302873,2,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,non_epoch_listed_calls_per_mission,289.08,447.36,158.28,54.75301,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,19.708012301,19.253750835,-0.454261465,-2.304958,29,0,21,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+agx_cbaa_high_b4,agx,CBAA,high,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,38.54,38.54,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,admissions_per_mission_s,0.07648895,0.020910443,-0.055578507,-72.662139,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,allocator_calls_per_mission,1557.74,1305.84,-251.9,-16.170863,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,allocator_calls_per_mission_s,2.763964037,2.272604026,-0.49136001,-17.777366,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,processor_work_s_per_mission,0.874336444,0.785026086,-0.089310357,-10.214644,46,0,4,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,work_s_per_admitted_task,0.017486729,0.015700522,-0.001786207,-10.214644,46,0,4,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,work_s_per_released_online_task,0.020817534,0.018691097,-0.002126437,-10.214644,46,0,4,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,work_s_per_mission_s,0.001555195,0.001367753,-0.000187441,-12.052603,48,0,2,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,work_s_per_call,0.000560842,0.000601166,4.0324e-05,7.189928,2,0,48,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,release_to_admission_s_online,0,19.412302999,19.412302999,,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,admission_to_completion_s_online,14.17570488,14.844305357,0.668600476,4.716524,17,0,33,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,release_to_completion_s_online,14.17570488,34.256608356,20.080903476,141.657178,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,release_to_completion_s_all50,16.916711108,33.806902797,16.890191688,99.843235,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,release_to_completion_s_first40_online,14.264365207,34.493591751,20.229226544,141.816521,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,mission_duration_s,576.222306502,587.487442788,11.265136286,1.954998,8,0,42,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,41.84,42,0.16,0.382409,0,42,8,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.226593257,0.077636858,-0.148956399,-65.737348,49,0,1,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,42,admission_to_first_current_goal_s_online_complete42_only,2.205984187,4.162925015,1.956940828,88.710556,3,0,39,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,non_epoch_listed_calls_per_mission,1385.74,1257.84,-127.9,-9.229726,42,1,7,AGX task+epoch streams and compact pairs
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,2.172452781,4.09766952,1.925216739,88.619498,4,0,46,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+agx_hipc_low_b4,agx,HIPC,low,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,41.84,41.84,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,admissions_per_mission_s,0.076544233,0.020896929,-0.055647304,-72.699538,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,allocator_calls_per_mission,1603.72,1208.1,-395.62,-24.668895,48,0,2,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,allocator_calls_per_mission_s,2.826192701,2.100222687,-0.725970014,-25.687209,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,processor_work_s_per_mission,0.573107235,0.40465543,-0.168451805,-29.39272,49,0,1,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,work_s_per_admitted_task,0.011462145,0.008093109,-0.003369036,-29.39272,49,0,1,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,work_s_per_released_online_task,0.01364541,0.009634653,-0.004010757,-29.39272,49,0,1,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,work_s_per_mission_s,0.001008174,0.000703269,-0.000304904,-30.243237,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,work_s_per_call,0.000357041,0.000334642,-2.2398e-05,-6.273367,48,0,2,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,release_to_admission_s_online,0,19.339167469,19.339167469,,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,admission_to_completion_s_online,13.54294615,14.633073122,1.090126972,8.049408,12,0,38,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,release_to_completion_s_online,13.54294615,33.972240592,20.429294442,150.848229,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,release_to_completion_s_all50,14.860276724,31.940489309,17.080212585,114.938725,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,release_to_completion_s_first40_online,13.582786598,34.231572573,20.648785975,152.021721,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,mission_duration_s,576.002454606,586.964355664,10.961901058,1.9031,10,0,40,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,41.84,41.88,0.04,0.095602,5,38,7,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.651233237,1.174426764,0.523193527,80.338886,6,0,44,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,37,admission_to_first_current_goal_s_online_complete42_only,0.530184089,1.056459937,0.526275847,99.262852,3,0,34,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,non_epoch_listed_calls_per_mission,1431.72,1160.1,-271.62,-18.971587,47,0,3,AGX task+epoch streams and compact pairs
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,0.626376231,1.146205742,0.519829511,82.98998,5,0,45,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+agx_cbaa_low_b4,agx,CBAA,low,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,41.72,41.72,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,admissions_per_mission_s,0.244649507,0.062481044,-0.182168463,-74.460997,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,allocator_calls_per_mission,1105.24,1034.26,-70.98,-6.422135,34,0,16,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,allocator_calls_per_mission_s,6.224779461,5.335560331,-0.88921913,-14.285151,43,0,7,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,processor_work_s_per_mission,1.123455381,0.948917459,-0.174537922,-15.535813,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,work_s_per_admitted_task,0.022469108,0.018978349,-0.003490758,-15.535813,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,work_s_per_released_online_task,0.026748938,0.022593273,-0.004155665,-15.535813,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,work_s_per_mission_s,0.006423168,0.00495043,-0.001472738,-22.92853,41,0,9,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,work_s_per_call,0.001008892,0.000912802,-9.609e-05,-9.524348,38,0,12,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,release_to_admission_s_online,0,6.596599674,6.596599674,,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,admission_to_completion_s_online,23.207260995,21.785190217,-1.422070778,-6.127698,29,0,21,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,release_to_completion_s_online,23.207260995,28.381789891,5.174528897,22.297025,7,0,43,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,release_to_completion_s_all50,25.108772944,29.371817664,4.26304472,16.978308,9,0,41,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,release_to_completion_s_first40_online,23.34676416,27.151616592,3.804852431,16.29713,10,0,40,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,mission_duration_s,178.384914294,195.574868674,17.18995438,9.63644,10,0,40,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,41.12,41.62,0.5,1.215953,8,23,19,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.477576584,0.352772495,-0.124804089,-26.132791,44,0,6,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,20,admission_to_first_current_goal_s_online_complete42_only,12.829241461,12.153299006,-0.675942455,-5.268764,10,0,10,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,non_epoch_listed_calls_per_mission,933.24,986.26,53.02,5.681282,19,0,31,AGX task+epoch streams and compact pairs
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,10.809257605,10.616918076,-0.19233953,-1.779396,28,0,22,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+agx_hipc_medium_b4,agx,HIPC,medium,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,40.76,40.76,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,admissions_per_mission,43,12.12,-30.88,-71.813953,50,0,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,admissions_per_mission_s,0.311679131,0.088374708,-0.223304423,-71.645613,50,0,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,allocator_calls_per_mission,992.74,859.78,-132.96,-13.393235,36,0,14,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,allocator_calls_per_mission_s,7.089241216,6.126012841,-0.963228375,-13.587186,41,0,9,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,processor_work_s_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_admitted_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_released_online_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_mission_s,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,work_s_per_call,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,release_to_admission_s_online,0,2.685918223,2.685918223,,0,0,50,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,admission_to_completion_s_online,31.066700992,29.525477832,-1.54122316,-4.961013,29,0,21,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,release_to_completion_s_online,31.066700992,32.211396055,1.144695063,3.684637,18,0,32,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,release_to_completion_s_all50,32.452985389,33.382743441,0.929758051,2.864938,18,0,32,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,release_to_completion_s_first40_online,31.112246857,32.216131359,1.103884502,3.548071,18,0,32,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,mission_duration_s,140.335945046,140.34868461,0.012739564,0.009078,28,0,22,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,terminal_residual_tasks_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,online_tasks_with_recorded_first_current_goal,40.56,41.12,0.56,1.380671,13,17,20,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.564051761,0.545499099,-0.018552662,-3.289177,29,0,21,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,6,admission_to_first_current_goal_s_online_complete42_only,21.317548174,25.428731697,4.111183523,19.285443,1,0,5,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,epoch_listed_calls_per_mission,172,48.48,-123.52,-71.813953,50,0,0,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,non_epoch_listed_calls_per_mission,820.74,811.3,-9.44,-1.150182,21,0,29,AGX task+epoch streams and compact pairs
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,20.734024705,19.448453174,-1.285571531,-6.200299,30,0,20,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+zero_hipc_high_bounded,zero_compute,HIPC,high,bounded_b4_w10,50,50,50,paired_online_tasks_with_recorded_goal_both,39.82,39.82,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,admissions_per_mission_s,0.368545103,0.085793531,-0.282751572,-76.721023,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,allocator_calls_per_mission,456.4,486.46,30.06,6.586328,15,0,35,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,allocator_calls_per_mission_s,3.877610447,3.438385231,-0.439225216,-11.327214,47,0,3,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,processor_work_s_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,work_s_per_admitted_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,work_s_per_released_online_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,work_s_per_mission_s,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,work_s_per_call,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,release_to_admission_s_online,0,4.845650635,4.845650635,,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,admission_to_completion_s_online,27.051079597,27.581727546,0.530647949,1.961652,23,0,27,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,release_to_completion_s_online,27.051079597,32.427378182,5.376298585,19.874617,5,0,45,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,release_to_completion_s_all50,27.001351246,31.455650904,4.454299658,16.496581,8,0,42,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,release_to_completion_s_first40_online,27.242521326,30.676399736,3.43387841,12.604848,11,0,39,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,mission_duration_s,117.809863698,141.790670646,23.980806948,20.355517,2,0,48,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,39.9,39.88,-0.02,-0.050125,21,11,18,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,18.895516229,18.74645283,-0.149063399,-0.788882,24,0,26,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,1,admission_to_first_current_goal_s_online_complete42_only,19.417632177,16.17409916,-3.243533018,-16.70406,1,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,non_epoch_listed_calls_per_mission,284.4,438.46,154.06,54.170183,1,0,49,AGX task+epoch streams and compact pairs
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,19.714564623,19.531361474,-0.183203149,-0.929278,25,0,25,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+zero_cbaa_high_b4,zero_compute,CBAA,high,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,38.36,38.36,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,admissions_per_mission_s,0.076478484,0.020909764,-0.05556872,-72.659285,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,allocator_calls_per_mission,1614.58,1192.72,-421.86,-26.128157,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,allocator_calls_per_mission_s,2.851231965,2.073532818,-0.777699147,-27.275899,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,processor_work_s_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,work_s_per_admitted_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,work_s_per_released_online_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,work_s_per_mission_s,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,work_s_per_call,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,release_to_admission_s_online,0,19.365427899,19.365427899,,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,admission_to_completion_s_online,13.70018237,14.325650235,0.625467865,4.565398,13,0,37,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,release_to_completion_s_online,13.70018237,33.691078135,19.990895765,145.917005,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,release_to_completion_s_all50,14.974033703,31.684824537,16.710790834,111.598459,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,release_to_completion_s_first40_online,13.731455145,33.921594839,20.190139694,147.035689,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,mission_duration_s,575.517361044,587.574202844,12.0568418,2.094957,7,0,43,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,41.82,41.88,0.06,0.143472,4,39,7,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.699170397,1.143884091,0.444713694,63.60591,9,0,41,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,37,admission_to_first_current_goal_s_online_complete42_only,0.607414478,1.04848977,0.441075291,72.615209,5,0,32,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,non_epoch_listed_calls_per_mission,1442.58,1144.72,-297.86,-20.647728,45,0,5,AGX task+epoch streams and compact pairs
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,0.663718058,1.133095213,0.469377155,70.719359,6,0,44,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+zero_cbaa_low_b4,zero_compute,CBAA,low,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,41.72,41.72,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,admissions_per_mission,43,12,-31,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,admissions_per_mission_s,0.235651815,0.061738254,-0.173913561,-73.80107,50,0,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,allocator_calls_per_mission,1159.66,1037.1,-122.56,-10.568615,36,1,13,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,allocator_calls_per_mission_s,6.294505285,5.277606173,-1.016899111,-16.155346,45,0,5,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,processor_work_s_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,work_s_per_admitted_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,work_s_per_released_online_task,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,work_s_per_mission_s,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,work_s_per_call,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,release_to_admission_s_online,0,6.595814424,6.595814424,,0,0,50,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,admission_to_completion_s_online,24.224574209,22.084923451,-2.139650759,-8.832563,32,0,18,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,release_to_completion_s_online,24.224574209,28.680737874,4.456163665,18.39522,8,0,42,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,release_to_completion_s_all50,26.013014689,29.587322194,3.574307505,13.740459,11,0,39,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,release_to_completion_s_first40_online,24.43006105,27.380966921,2.950905871,12.078995,17,0,33,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,mission_duration_s,185.945985832,198.143341648,12.197355816,6.559623,17,0,33,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,recovery_attempts_per_mission,0,0,0,,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,terminal_residual_tasks_per_mission,0,2,2,,0,0,50,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,online_tasks_with_recorded_first_current_goal,41.26,41.24,-0.02,-0.048473,16,21,13,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,online_tasks_with_recorded_first_assignment,42,42,0,0,0,50,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,admission_to_first_assignment_s_online_complete42_only,0.475933362,0.3307389,-0.145194463,-30.507309,44,0,6,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,17,admission_to_first_current_goal_s_online_complete42_only,12.585170517,11.585584799,-0.999585717,-7.942568,11,0,6,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,epoch_listed_calls_per_mission,172,48,-124,-72.093023,50,0,0,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,non_epoch_listed_calls_per_mission,987.66,989.1,1.44,0.145799,22,0,28,AGX task+epoch streams and compact pairs
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,admission_to_first_current_goal_s_online_paired_observed_tasks_only,11.828236173,10.754209745,-1.074026428,-9.080191,30,0,20,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+zero_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,50,50,50,paired_online_tasks_with_recorded_goal_both,40.54,40.54,0,0,0,50,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,admissions_per_mission,43,12,-31,-72.093023,4,0,0,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,admissions_per_mission_s,0.189876254,0.060073777,-0.129802477,-68.361617,4,0,0,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,allocator_calls_per_mission,813,732.25,-80.75,-9.932349,4,0,0,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,allocator_calls_per_mission_s,3.53996139,3.664369182,0.124407793,3.514383,2,0,2,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,processor_work_s_per_mission,353.31235375,141.84867575,-211.463678,-59.851765,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,work_s_per_admitted_task,7.066247075,2.836973515,-4.22927356,-59.851765,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,work_s_per_released_online_task,8.412198899,3.377349423,-5.034849476,-59.851765,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,work_s_per_mission_s,1.359000004,0.688543207,-0.670456797,-49.334569,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,work_s_per_call,0.437101021,0.194120666,-0.242980355,-55.589061,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,release_to_completion_s_all50,62.387959585,37.762016438,-24.625943148,-39.472269,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,mission_duration_s,238.469451675,201.596428575,-36.8730231,-15.462368,3,0,1,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,recovery_attempts_per_mission,0,0,0,,0,4,0,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+rp2040_hipc_medium_b4,rp2040,HIPC,medium,count_b4,4,4,4,terminal_residual_tasks_per_mission,0,2,2,,0,0,4,corrected hardware trial compact pairs; no raw hardware task/epoch stream
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,admissions_per_mission,43,12,-31,-72.093023,4,0,0,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,admissions_per_mission_s,0.257654256,0.06235682,-0.195297436,-75.798257,4,0,0,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,allocator_calls_per_mission,1088.5,1087.25,-1.25,-0.114837,2,0,2,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,allocator_calls_per_mission_s,6.433618195,5.656830756,-0.776787439,-12.073882,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,processor_work_s_per_mission,1.10096335,1.01520172,-0.08576163,-7.78969,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,work_s_per_admitted_task,0.022019267,0.020304034,-0.001715233,-7.78969,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,work_s_per_released_online_task,0.026213413,0.02417147,-0.002041944,-7.78969,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,work_s_per_mission_s,0.006543641,0.005299257,-0.001244384,-19.016689,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,work_s_per_call,0.001011627,0.000929204,-8.2422e-05,-8.147516,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,release_to_admission_s_online,0,6.388491067,6.388491067,,0,0,4,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,admission_to_completion_s_online,20.685288277,21.06232118,0.377032903,1.82271,2,0,2,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,release_to_completion_s_online,20.685288277,27.450812248,6.76552397,32.706936,0,0,4,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,release_to_completion_s_all50,23.724404892,30.294047247,6.569642355,27.691495,0,0,4,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,release_to_completion_s_first40_online,21.086818403,26.156531313,5.06971291,24.042095,0,0,4,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,mission_duration_s,168.725579525,192.7178219,23.992242375,14.219683,1,0,3,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,recovery_attempts_per_mission,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,terminal_residual_tasks_per_mission,0,2,2,,0,0,4,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,online_tasks_with_recorded_first_current_goal,41.75,42,0.25,0.598802,0,3,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,online_tasks_with_recorded_first_assignment,42,42,0,0,0,4,0,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,admission_to_first_assignment_s_online_complete42_only,0.526671631,0.327755286,-0.198916346,-37.76857,3,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,3,admission_to_first_current_goal_s_online_complete42_only,11.244143756,11.485757986,0.24161423,2.148801,2,0,1,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,epoch_listed_calls_per_mission,172,48,-124,-72.093023,4,0,0,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,non_epoch_listed_calls_per_mission,916.5,1039.25,122.75,13.393344,2,0,2,AGX task+epoch streams and compact pairs
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,admission_to_first_current_goal_s_online_paired_observed_tasks_only,10.864735483,10.392302154,-0.47243333,-4.348319,3,0,1,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+agx_identical4_hipc_medium_b4,agx,HIPC,medium,count_b4,4,4,4,paired_online_tasks_with_recorded_goal_both,41.75,41.75,0,0,0,4,0,AGX task stream; shared observed-goal task count out of 42 online tasks
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,admissions_per_mission,43,12,-31,-72.093023,4,0,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,admissions_per_mission_s,0.23910522,0.06304463,-0.176060591,-73.633102,4,0,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,allocator_calls_per_mission,1223,1054.75,-168.25,-13.757155,3,0,1,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,allocator_calls_per_mission_s,6.686255094,5.543755674,-1.142499421,-17.087284,4,0,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,processor_work_s_per_mission,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,work_s_per_admitted_task,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,work_s_per_released_online_task,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,work_s_per_mission_s,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,work_s_per_call,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,release_to_admission_s_online,0,6.14857864,6.14857864,,0,0,4,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,admission_to_completion_s_online,22.47229553,20.335125578,-2.137169952,-9.510243,3,0,1,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,release_to_completion_s_online,22.47229553,26.483704215,4.011408685,17.850462,0,0,4,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,release_to_completion_s_all50,25.50469128,29.657944305,4.153253025,16.284271,0,0,4,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,release_to_completion_s_first40_online,22.82843502,25.243178262,2.414743242,10.577787,1,0,3,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,mission_duration_s,183.950469875,190.6355753,6.685105425,3.634188,2,0,2,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,recovery_attempts_per_mission,0,0,0,,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,terminal_residual_tasks_per_mission,0,2,2,,0,0,4,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,online_tasks_with_recorded_first_current_goal,41.5,41.75,0.25,0.60241,1,2,1,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,online_tasks_with_recorded_first_assignment,42,42,0,0,0,4,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,admission_to_first_assignment_s_online_complete42_only,0.509936095,0.256551596,-0.253384499,-49.689461,4,0,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,2,admission_to_first_current_goal_s_online_complete42_only,12.367456079,10.764546206,-1.602909873,-12.960708,2,0,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,epoch_listed_calls_per_mission,172,48,-124,-72.093023,4,0,0,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,non_epoch_listed_calls_per_mission,1051,1006.75,-44.25,-4.210276,2,0,2,AGX task+epoch streams and compact pairs
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,admission_to_first_current_goal_s_online_paired_observed_tasks_only,12.116567883,10.285131743,-1.83143614,-15.11514,4,0,0,AGX task stream; intersection of online task indices with recorded goal in both policies; selection-sensitive
+zero_identical4_hipc_medium_b4,zero_compute,HIPC,medium,count_b4,4,4,4,paired_online_tasks_with_recorded_goal_both,41.25,41.25,0,0,0,4,0,AGX task stream; shared observed-goal task count out of 42 online tasks

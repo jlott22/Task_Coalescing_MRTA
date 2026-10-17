@@ -1,0 +1,40 @@
+{
+  "primary_and_mechanism_portable_regeneration": "PASS",
+  "isolated_temp_copy_without_repository_exports": true,
+  "commands": [
+    {
+      "script": "build_paper_tables.py",
+      "exit_code": 0
+    },
+    {
+      "script": "build_mechanisms.py",
+      "exit_code": 0
+    },
+    {
+      "script": "build_handoff.py",
+      "exit_code": 0
+    }
+  ],
+  "numeric_tables_compared": [
+    "all_policy_paired_effects.csv",
+    "all_policy_effects_long.csv",
+    "anchor_examples.csv",
+    "anchor_rounds.csv",
+    "completion_accounting.csv",
+    "regime_map.csv",
+    "mechanism_decomposition.csv",
+    "low_load_count4.csv",
+    "figure_sources/01_regime_scatter.csv",
+    "figure_sources/02_mechanism.csv",
+    "figure_sources/04_completion.csv"
+  ],
+  "numeric_tolerance": {
+    "rtol": 1e-09,
+    "atol": 1e-08
+  },
+  "local_markdown_links_checked": 24,
+  "independent_statistical_QA": "PASS: all48 maximum-step bootstraps and4 representative reused contrasts independently reconciled; wide/long counts and all metric intervals/directions reconciled",
+  "editorial_QA": "PASS: headline values, filters, denominators and regime counts checked against source tables; final rounding corrections applied",
+  "production_experiments_run": 0,
+  "hardware_contact": false
+}

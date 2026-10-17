@@ -42,6 +42,9 @@ Thumbs.db
 *.svg
 *.eps
 
+# Deliberately versioned final manuscript figure previews.
+!/analysis/roboticcc_final/figures/png/*.png
+
 # Device backups are retained locally only
 /artifacts/pololu_backup_*/
 
