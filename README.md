@@ -23,7 +23,8 @@ The failed and incomplete missions stay in the campaign denominator. Continuous 
 | Final manuscript data and reproduction guide | [`analysis/roboticcc_final/README.md`](analysis/roboticcc_final/README.md) |
 | Paper Table I and II source tables | [`analysis/roboticcc_final/tables/`](analysis/roboticcc_final/tables/) |
 | Figures 1–3, plotted CSVs, and MATLAB sources | [`analysis/roboticcc_final/figures/`](analysis/roboticcc_final/figures/) and [`analysis/roboticcc_final/matlab/`](analysis/roboticcc_final/matlab/) |
-| Trace-level publication inputs and field definitions | [`analysis/roboticcc_final/source_data/README.md`](analysis/roboticcc_final/source_data/README.md) |
+| Publication data dictionary and field definitions | [`DATA_DICTIONARY.md`](DATA_DICTIONARY.md) |
+| Trace-level publication inputs | [`analysis/roboticcc_final/source_data/README.md`](analysis/roboticcc_final/source_data/README.md) |
 | Derived tables and pairing rules | [`analysis/roboticcc_final/derived_data/README.md`](analysis/roboticcc_final/derived_data/README.md) |
 | Claim-to-source map and manuscript checks | [`analysis/roboticcc_final/CLAIM_SOURCE_MAP.csv`](analysis/roboticcc_final/CLAIM_SOURCE_MAP.csv) and [`checks/`](analysis/roboticcc_final/checks/) |
 | Corrected compact AGX and HIL exports | [`corrected_agx_v7_results/`](corrected_agx_v7_results/) and [`corrected_hardware_v9_v10_progress/`](corrected_hardware_v9_v10_progress/) |
